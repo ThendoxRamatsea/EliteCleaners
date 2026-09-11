@@ -5,7 +5,7 @@ import "../styles/elite.css";
 import bodyHtml from "../content/elite-body.html?raw";
 import pageScript from "../content/elite-script.js?raw";
 import ldJson from "../content/elite-ld.json?raw";
-import favicon from "../assets/img_fda68366.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,8 +38,8 @@ export const Route = createFileRoute("/")({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,440;9..144,560&family=Inter:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", type: "image/png", href: favicon.url },
-      { rel: "apple-touch-icon", href: favicon.url },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
     scripts: [{ type: "application/ld+json", children: ldJson }],
   }),
