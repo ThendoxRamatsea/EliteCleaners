@@ -377,11 +377,9 @@ button { font-family: inherit; }
 .team-intro .section-head { margin-bottom: 0; }
 .team-intro h2 { color: #fff; }
 .team-intro .section-lead { color: rgba(255,255,255,0.7); }
-.training-note { display: flex; gap: 18px; align-items: flex-start; border-top: 1px solid var(--gold-500); padding-top: 20px; }
-.training-mark {
-  flex: 0 0 42px; width: 42px; height: 42px; border: 1px solid var(--gold-500); border-radius: 50%;
-  display: grid; place-items: center; color: var(--gold-400); font-family: var(--font-display); font-size: 1.25rem;
-}
+.training-note { display: grid; gap: 16px; align-items: start; border-top: 1px solid var(--gold-500); padding-top: 20px; }
+.training-logo-link { display: block; width: min(190px, 100%); }
+.training-logo { display: block; width: 100%; height: auto; object-fit: contain; }
 .training-note strong { display: block; color: #fff; margin-bottom: 4px; }
 .training-note p { margin: 0; color: rgba(255,255,255,0.68); font-size: 0.9rem; }
 .training-note a { color: var(--gold-400); text-underline-offset: 3px; }
