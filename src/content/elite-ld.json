@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Elite Cleaners",
+  "image": "/__l5e/assets-v1/41ee0d7d-988a-4839-b65b-5be95ffa975e/img_b5a83405.png",
+  "description": "Professional home, laundry and corporate cleaning services in Johannesburg with simple upfront pricing.",
+  "areaServed": "Johannesburg, Gauteng, South Africa",
+  "telephone": "+27766321161",
+  "email": "info@elitecleaners.co.za",
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:30","closes":"17:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}
+  ],
+  "priceRange": "R280 - R3250"
+}
