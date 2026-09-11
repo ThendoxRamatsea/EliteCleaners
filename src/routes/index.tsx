@@ -8,6 +8,7 @@ import ldJson from "../content/elite-ld.json?raw";
 
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Elite Cleaners | Home & Corporate Cleaning Johannesburg" },
