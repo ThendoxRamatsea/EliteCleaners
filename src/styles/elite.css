@@ -176,15 +176,22 @@ button { font-family: inherit; }
 
 @media (max-width: 900px) {
   .main-nav {
-    position: fixed; inset: 78px 0 0 0; background: var(--paper);
+    display: none; position: absolute; top: 78px; left: 0; right: 0; background: var(--paper);
     flex-direction: column; align-items: flex-start; gap: 0;
-    padding: 8px 24px 24px; transform: translateY(-8px); opacity: 0; pointer-events: none;
-    transition: transform .2s ease, opacity .2s ease; border-top: 1px solid var(--line);
+    padding: 8px 24px 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 32px rgba(11,21,38,0.12);
   }
-  .main-nav.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .main-nav.is-open { display: flex; }
   .main-nav a { width: 100%; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
   .nav-toggle { display: flex; }
   .header-actions .btn-primary { padding: 10px 16px; font-size: 0.88rem; }
+}
+@media (max-width: 520px) {
+  .header-inner { height: 70px; gap: 10px; padding-inline: 18px; }
+  .brand-logo { height: 38px; }
+  .main-nav { top: 70px; padding-inline: 18px; }
+  .header-actions { gap: 6px; }
+  .header-actions .btn-primary { padding: 9px 12px; }
 }
 
 /* ============================================================
@@ -236,8 +243,16 @@ button { font-family: inherit; }
 .hv-card-label { font-size: 0.78rem; color: var(--ink-faint); font-weight: 600; }
 .hv-card-price { font-family: var(--font-display); font-size: 1.8rem; color: var(--navy-950); }
 .hv-card-meta { font-size: 0.8rem; color: var(--ink-soft); }
-@media (max-width: 980px) { .hero-visual { height: 320px; } }
-@media (max-width: 560px) { .hero-visual { display: none; } }
+@media (max-width: 980px) { .hero-visual { height: 360px; max-width: 620px; width: 100%; } }
+@media (max-width: 560px) {
+  .hero { padding-top: 44px; }
+  .hero-visual { display: block; height: 300px; margin-top: 4px; }
+  .hv-panel-a { width: 92%; height: 86%; }
+  .hv-panel-b { width: 44%; height: 32%; }
+  .hv-card { left: 0; bottom: 3%; padding: 14px 18px; }
+  .hv-card-price { font-size: 1.45rem; }
+  .hv-monogram { width: 62px; }
+}
 
 /* ============================================================
    SERVICES OVERVIEW
@@ -347,6 +362,45 @@ button { font-family: inherit; }
 .about-signoff {
   font-family: var(--font-display); font-style: italic; font-size: 1.15rem; color: var(--navy-950);
   margin-top: 24px; border-left: 3px solid var(--gold-500); padding-left: 18px;
+}
+
+/* ============================================================
+   TEAM
+   ============================================================ */
+.team-section { background: var(--navy-950); }
+.team-intro { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 64px; align-items: end; margin-bottom: 46px; }
+.team-intro .section-head { margin-bottom: 0; }
+.team-intro h2 { color: #fff; }
+.team-intro .section-lead { color: rgba(255,255,255,0.7); }
+.training-note { display: flex; gap: 18px; align-items: flex-start; border-top: 1px solid var(--gold-500); padding-top: 20px; }
+.training-mark {
+  flex: 0 0 42px; width: 42px; height: 42px; border: 1px solid var(--gold-500); border-radius: 50%;
+  display: grid; place-items: center; color: var(--gold-400); font-family: var(--font-display); font-size: 1.25rem;
+}
+.training-note strong { display: block; color: #fff; margin-bottom: 4px; }
+.training-note p { margin: 0; color: rgba(255,255,255,0.68); font-size: 0.9rem; }
+.training-note a { color: var(--gold-400); text-underline-offset: 3px; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.team-member { background: var(--paper); border-bottom: 3px solid var(--gold-500); }
+.team-headshot-placeholder {
+  aspect-ratio: 4 / 5; display: grid; place-items: center;
+  background: linear-gradient(145deg, var(--navy-800), var(--navy-950)); overflow: hidden;
+}
+.team-headshot-placeholder span {
+  width: 82px; height: 82px; border: 1px solid var(--gold-500); border-radius: 50%;
+  display: grid; place-items: center; color: var(--gold-400); font-family: var(--font-display); font-size: 1.6rem;
+}
+.team-member-copy { padding: 18px 20px 20px; }
+.team-member h3 { font-size: 1.05rem; margin-bottom: 4px; }
+.team-member p { margin: 0; color: var(--ink-faint); font-size: 0.84rem; }
+@media (max-width: 900px) {
+  .team-intro { grid-template-columns: 1fr; gap: 28px; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .team-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .team-member-copy { padding: 14px; }
+  .team-headshot-placeholder span { width: 62px; height: 62px; font-size: 1.25rem; }
 }
 
 /* ============================================================
