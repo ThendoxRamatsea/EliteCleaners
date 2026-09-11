@@ -601,3 +601,23 @@ body.modal-open { overflow: hidden; }
 @media (max-width: 720px) {
   .pricing-promise-grid, .hero-grid { text-align: left; }
 }
+
+/* ============================================================
+   SECTION PHOTOGRAPHY
+   ============================================================ */
+.hv-panel-a, .av-block-a, .av-block-b { overflow: hidden; }
+.hv-photo, .av-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hv-photo { opacity: 0.96; }
+.av-block-b { box-shadow: var(--shadow-lift); }
+
+.deep-clean-section {
+  position: relative;
+  background-image: linear-gradient(100deg, rgba(11,20,38,0.96) 0%, rgba(11,20,38,0.86) 45%, rgba(11,20,38,0.55) 100%), url("/__l5e/assets-v1/7705c6fc-2495-4607-9afb-89ff5fe19a8f/deep-clean.jpg");
+  background-size: cover;
+  background-position: center right;
+}
+@media (max-width: 760px) {
+  .deep-clean-section {
+    background-image: linear-gradient(180deg, rgba(11,20,38,0.94), rgba(11,20,38,0.9)), url("/__l5e/assets-v1/7705c6fc-2495-4607-9afb-89ff5fe19a8f/deep-clean.jpg");
+  }
+}
