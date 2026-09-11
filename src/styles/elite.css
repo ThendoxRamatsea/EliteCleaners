@@ -607,7 +607,9 @@ body.modal-open { overflow: hidden; }
    ============================================================ */
 .hv-panel-a, .av-block-a, .av-block-b { overflow: hidden; }
 .hv-photo, .av-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hv-photo { opacity: 0.96; }
+.hv-photo { opacity: 0.96; object-position: 50% 20%; }
+.av-block-a .av-photo { object-position: 50% 30%; }
+.av-block-b .av-photo { object-position: center; }
 .av-block-b { box-shadow: var(--shadow-lift); }
 
 .deep-clean-section {
