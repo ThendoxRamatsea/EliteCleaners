@@ -272,6 +272,8 @@ button { font-family: inherit; }
 .service-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
 .service-card p { font-size: 0.92rem; flex: 1; }
 .service-link { font-size: 0.85rem; font-weight: 600; color: var(--gold-600); }
+.service-card-soon { pointer-events: none; }
+.service-coming-soon { font-size: 0.85rem; font-weight: 600; color: var(--ink-faint); }
 @media (max-width: 900px) { .service-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .service-grid { grid-template-columns: 1fr; } }
 
@@ -767,13 +769,13 @@ body.modal-open { overflow: hidden; }
 
 .deep-clean-section {
   position: relative;
-  background-image: linear-gradient(100deg, rgba(11,20,38,0.96) 0%, rgba(11,20,38,0.86) 45%, rgba(11,20,38,0.55) 100%), url("/__l5e/assets-v1/7705c6fc-2495-4607-9afb-89ff5fe19a8f/deep-clean.jpg");
+  background-image: linear-gradient(100deg, rgba(17,26,38,0.96) 0%, rgba(17,26,38,0.86) 45%, rgba(17,26,38,0.55) 100%), url("/__l5e/assets-v1/7705c6fc-2495-4607-9afb-89ff5fe19a8f/deep-clean.jpg");
   background-size: cover;
   background-position: center right;
 }
 @media (max-width: 760px) {
   .deep-clean-section {
-    background-image: linear-gradient(180deg, rgba(11,20,38,0.94), rgba(11,20,38,0.9)), url("/__l5e/assets-v1/7705c6fc-2495-4607-9afb-89ff5fe19a8f/deep-clean.jpg");
+    background-image: linear-gradient(180deg, rgba(17,26,38,0.94), rgba(17,26,38,0.9)), url("/__l5e/assets-v1/7705c6fc-2495-4607-9afb-89ff5fe19a8f/deep-clean.jpg");
   }
 }
 
