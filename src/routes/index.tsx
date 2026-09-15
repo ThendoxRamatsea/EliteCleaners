@@ -9,6 +9,10 @@ import cleanKitchen from "../assets/clean-kitchen.jpg";
 import bedroomCare from "../assets/bedroom-care.jpg";
 import cleanBathroom from "../assets/clean-bathroom.jpg";
 import cleanOffice from "../assets/clean-office.jpg";
+import cardHome from "../assets/card-home-cleaning.jpg";
+import cardLaundry from "../assets/card-laundry.jpg";
+import cardDeep from "../assets/card-deep-cleaning.jpg";
+import cardCorporate from "../assets/card-corporate.jpg";
 
 
 export const Route = createFileRoute("/")({
@@ -64,7 +68,11 @@ function Index() {
     .replaceAll("__CLEAN_KITCHEN__", cleanKitchen)
     .replaceAll("__BEDROOM_CARE__", bedroomCare)
     .replaceAll("__CLEAN_BATHROOM__", cleanBathroom)
-    .replaceAll("__CLEAN_OFFICE__", cleanOffice);
+    .replaceAll("__CLEAN_OFFICE__", cleanOffice)
+    .replaceAll("__CARD_HOME__", cardHome)
+    .replaceAll("__CARD_LAUNDRY__", cardLaundry)
+    .replaceAll("__CARD_DEEP__", cardDeep)
+    .replaceAll("__CARD_CORPORATE__", cardCorporate);
 
   return <div dangerouslySetInnerHTML={{ __html: hydratedBodyHtml }} />;
 }
