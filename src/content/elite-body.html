@@ -12,6 +12,7 @@
     <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
       <a href="#home">Home</a>
       <a href="#home-cleaning">Home Cleaning</a>
+      <a href="/packages">Packages</a>
       <a href="#laundry">Laundry</a>
       <a href="#about">About</a>
       <a href="#faqs">FAQs</a>
@@ -43,7 +44,7 @@
         <p class="hero-lead"><strong>More than clean. Absolute peace of mind.</strong> Reliable, professionally trained cleaners for homes across Johannesburg. Enjoy a properly cared for home, without the hassle of managing the cleaning yourself. Don’t worry about counting hours — our trained cleaners leave only when the work is done.</p>
         <div class="hero-ctas">
           <button class="btn btn-primary btn-lg" id="heroBookBtn" type="button">Book Your Clean</button>
-          <a class="btn btn-outline btn-lg" href="#packages">View Packages</a>
+          <a class="btn btn-outline btn-lg" href="/packages">View Packages</a>
         </div>
         <div class="hero-trust">
           <div class="hero-trust-item">
@@ -109,13 +110,13 @@
           <p class="service-choice-kicker">Complete service</p>
           <h3>Elite Home Clean</h3>
           <p>Our complete home cleaning service, with laundry, ironing and selected appliance interiors included.</p>
-          <button class="btn btn-primary" type="button" data-package-mode="standard">View Home Clean prices</button>
+          <a class="btn btn-primary" href="/packages">View Home Clean prices</a>
         </article>
         <article class="service-choice">
           <p class="service-choice-kicker">Maintenance refresh</p>
           <h3>Elite Quick Clean</h3>
           <p>A streamlined clean for homes that need a refresh, without laundry, ironing or premium extras.</p>
-          <button class="btn btn-outline" type="button" data-package-mode="quick">View Quick Clean prices</button>
+          <a class="btn btn-outline" href="/packages?mode=quick">View Quick Clean prices</a>
         </article>
       </div>
 
@@ -143,24 +144,8 @@
         <p class="comparison-note">*Elite Quick Clean includes the inside of the microwave; the fridge, oven and dishwasher are cleaned externally.</p>
       </div>
 
-      <div class="package-pricing-intro">
-        <p class="eyebrow">Package pricing</p>
-        <h3>One clear price. No hourly calculations.</h3>
-        <p>Your package price is based on your home and selected service, so you know what you’re paying before we arrive.</p>
-      </div>
-      <div class="toggle-row" id="packages">
-        <div class="pkg-toggle" role="tablist" aria-label="Choose package type">
-          <button class="pkg-toggle-btn is-active" id="toggleStandard" role="tab" aria-selected="true" data-mode="standard">Elite Home Clean</button>
-          <button class="pkg-toggle-btn" id="toggleQuick" role="tab" aria-selected="false" data-mode="quick">Elite Quick Clean</button>
-          <span class="pkg-toggle-thumb" id="pkgToggleThumb" aria-hidden="true"></span>
-        </div>
-      </div>
-
-      <div class="pricing-grid" id="pricingGrid"></div>
-
-      <p class="pricing-footnote">All packages include cleaning products and equipment. Homes with more than four bedrooms require a custom quote.</p>
       <div class="section-booking-action section-booking-action-left">
-        <button class="btn btn-primary" id="pricingBookBtn" type="button">Book Your Clean</button>
+        <a class="btn btn-primary" href="/packages">View Package Prices</a>
       </div>
     </div>
   </section>
