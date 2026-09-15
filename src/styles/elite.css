@@ -1039,6 +1039,19 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   border-radius: var(--radius-m);
 }
 .laundry-price-card .lpc-price { color: var(--cream); }
+@media (max-width: 820px) {
+  .laundry-panel { grid-template-columns: 1fr; gap: 36px; }
+  .laundry-price-card { padding: 28px 22px; }
+}
+@media (max-width: 560px) {
+  .laundry-panel { gap: 28px; }
+  .laundry-load-option.chip { padding: 14px 12px; gap: 12px; }
+  .laundry-load-option span { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .laundry-load-option b { white-space: nowrap; }
+  .laundry-price-card { padding: 26px 20px; }
+  .laundry-price-card .lpc-price { font-size: clamp(2.4rem, 13vw, 3rem); }
+  .laundry-price-card .btn-primary { width: 100%; }
+}
 
 /* ---------- Slower, more organic reveals ---------- */
 .scroll-reveal {
