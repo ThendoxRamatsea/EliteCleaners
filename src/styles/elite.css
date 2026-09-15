@@ -359,19 +359,6 @@ button { font-family: inherit; }
 .section-booking-action { display: flex; justify-content: center; margin-top: 44px; }
 .section-booking-action-left { justify-content: flex-start; margin-top: 24px; }
 
-/* ============================================================
-   RECURRING HOME CLEANING
-   ============================================================ */
-.recurring-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(56px,9vw,120px); align-items: start; }
-.recurring-intro h2 { font-size: clamp(2rem,3.6vw,3.25rem); max-width: 12ch; }
-.recurring-intro > p:not(.eyebrow) { line-height: 1.75; }
-.recurring-intro .btn { margin-top: 16px; }
-.recurring-options { border-top: 1px solid var(--navy-950); }
-.recurring-option { display: grid; grid-template-columns: 52px minmax(130px,.55fr) 1fr; gap: 22px; align-items: baseline; padding: 26px 0; border-bottom: 1px solid var(--line); }
-.recurring-option h3, .recurring-option p { margin: 0; }
-.recurring-option h3 { font-size: 1.2rem; }
-.recurring-option > p:last-child { line-height: 1.65; }
-.recurring-number { color: var(--gold-600); font-family: var(--font-display); font-size: .9rem; }
 
 /* ============================================================
    PRICING PROMISE
@@ -902,7 +889,7 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   .hero-copy h1 { max-width: 12ch; }
   .about-grid { grid-template-columns: 1fr; }
   .about-visual { height: 500px; }
-  .recurring-grid, .standard-layout { grid-template-columns: 1fr; gap: 44px; }
+  .standard-layout { grid-template-columns: 1fr; gap: 44px; }
   .standard-intro { position: static; }
 }
 
@@ -927,8 +914,6 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   .price-card { padding: 28px 24px; }
   .laundry-load-option.chip { padding-inline: 12px; min-height: 58px; }
   .modal-panel { padding: 36px 24px 28px; }
-  .recurring-option { grid-template-columns: 38px 1fr; gap: 10px 16px; }
-  .recurring-option > p:last-child { grid-column: 2; }
   .standard-item, .reviews-layout { grid-template-columns: 1fr; gap: 10px; }
   .how-steps { grid-template-columns: 1fr; }
   .how-steps li { padding: 24px 0; border-bottom: 1px solid var(--line); }

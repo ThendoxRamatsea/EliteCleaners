@@ -223,8 +223,9 @@ const FAQS = [
   /* ---------- calm section reveals ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
-    ".section-head, .service-choice-intro, .included-comparison, .pricing-grid, .promise-list, .care-gallery, .about-copy, .team-grid, .laundry-panel, .deep-clean-section, .recurring-options, .standard-list, .how-steps, .faq-list"
+    ".section-head, .service-choice-intro, .included-comparison, .pricing-grid, .promise-list, .care-gallery, .about-copy, .team-grid, .laundry-panel, .deep-clean-section, .standard-list, .how-steps, .faq-list"
   );
+
   revealTargets.forEach(function (target, index) {
     target.classList.add("scroll-reveal");
     target.style.setProperty("--reveal-delay", String(index % 4 * 70) + "ms");
@@ -525,14 +526,8 @@ const FAQS = [
   document.getElementById("bookNowNavBtn").addEventListener("click", openBookingModal);
   document.getElementById("heroBookBtn").addEventListener("click", openBookingModal);
   document.getElementById("pricingBookBtn").addEventListener("click", openBookingModal);
-  document.getElementById("recurringBookBtn").addEventListener("click", function () {
-    resetBooking();
-    booking.service = "Home Cleaning";
-    booking.frequency = "Weekly";
-    openModal(bookingModal);
-    goToStep(2);
-  });
   document.getElementById("finalCtaBookBtn").addEventListener("click", openBookingModal);
+
   document.getElementById("mobileStickyBookBtn").addEventListener("click", openBookingModal);
 
   function startBookingWithPackage(pkgId) {
