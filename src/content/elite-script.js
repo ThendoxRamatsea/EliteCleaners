@@ -134,7 +134,7 @@ const FAQS = [
   { q: "Do you operate on Sundays?", a: "We're closed on Sundays. Enquiries sent over the weekend will be attended to during our next operating hours." },
   { q: "How do corporate quotes work?", a: "Complete the corporate quote form with details about your workplace, and we'll assess your space and put together a tailored cleaning solution." },
   { q: "Are corporate prices fixed?", a: "Corporate prices displayed are starting prices. Final pricing is confirmed after we've assessed the size, condition, location and requirements of your premises." },
-  { q: "How do I make a booking?", a: "Use the Book Now button anywhere on the site. Select your service and package, add your details, review your summary, and send your request via WhatsApp or email." },
+  { q: "How do I make a booking?", a: "Use the Book Your Clean button. Select your service and package, add your details, review your summary, and send your request via WhatsApp or email." },
   { q: "When is my booking confirmed?", a: "Submitting the booking form sends a booking request. Your booking is confirmed once Elite Cleaners has confirmed availability with you directly." },
   { q: "Can I request the same cleaner again?", a: "We'll always try to accommodate this where possible — let us know in your booking notes and we'll do our best." },
   { q: "What happens if I need to reschedule?", a: "Just get in touch with us via WhatsApp or email as soon as you can, and we'll help you find a new time that works." }
@@ -193,6 +193,13 @@ const FAQS = [
     stickyCta.classList.toggle("is-visible", window.scrollY > 480);
     lastY = window.scrollY;
   }, { passive: true });
+  const footer = document.getElementById("contact");
+  if ("IntersectionObserver" in window && footer) {
+    const footerObserver = new IntersectionObserver(function (entries) {
+      stickyCta.classList.toggle("is-footer-visible", entries[0].isIntersecting);
+    }, { threshold: 0.05 });
+    footerObserver.observe(footer);
+  }
 
   /* ---------- calm section reveals ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -544,7 +551,6 @@ const FAQS = [
   });
   document.getElementById("finalCtaBookBtn").addEventListener("click", openBookingModal);
   document.getElementById("mobileStickyBookBtn").addEventListener("click", openBookingModal);
-  document.getElementById("footerBookBtn").addEventListener("click", openBookingModal);
 
   function startBookingWithPackage(pkgId) {
     resetBooking();

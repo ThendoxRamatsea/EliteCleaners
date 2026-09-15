@@ -666,7 +666,7 @@ button { font-family: inherit; }
   background: rgba(255,255,255,0.96); backdrop-filter: blur(8px); border-top: 1px solid var(--line);
   transform: translateY(100%); transition: transform .25s ease; display: none;
 }
-.mobile-sticky-cta.is-visible { transform: translateY(0); }
+.mobile-sticky-cta.is-visible:not(.is-footer-visible) { transform: translateY(0); }
 @media (max-width: 720px) { .mobile-sticky-cta { display: block; } body { padding-bottom: 0; } }
 
 /* ============================================================
@@ -864,7 +864,11 @@ h1, h2, h3, h4 { font-weight: 500; letter-spacing: 0; }
 .training-note { background: rgba(255,255,255,.05); border: 1px solid rgba(185,151,82,.45); padding: 24px; border-radius: 8px; }
 .team-grid { gap: 24px; }
 .team-member { background: transparent; border: 0; color: var(--paper); }
-.team-headshot-placeholder { border-radius: 8px 30px 8px 8px; border: 1px solid rgba(185,151,82,.35); }
+.team-headshot-placeholder {
+  border-radius: 8px 30px 8px 8px;
+  border: 1px solid color-mix(in srgb, var(--gold-500) 35%, transparent);
+  background: var(--navy-900);
+}
 .team-member h3 { color: var(--paper); }
 .team-member-copy { padding-left: 0; }
 
