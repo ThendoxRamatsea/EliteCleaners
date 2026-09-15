@@ -9,19 +9,19 @@
       <img src="/__l5e/assets-v1/7dd46fa7-a363-4fc1-bdd0-51495d917e2a/img_60a1ee89.png" alt="Elite Cleaners" class="brand-logo" width="230" height="99">
     </a>
 
-    <nav class="main-nav" id="mainNav" aria-label="Primary">
+    <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
+      <a href="#home">Home</a>
       <a href="#home-cleaning">Home Cleaning</a>
       <a href="#laundry">Laundry</a>
-      <a href="#corporate">Corporate</a>
       <a href="#about">About</a>
       <a href="#faqs">FAQs</a>
       <a href="#contact">Contact</a>
     </nav>
 
     <div class="header-actions">
-      <a class="btn btn-ghost hide-mobile" id="whatsappNavBtn" href="#" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="btn btn-ghost hide-mobile" id="whatsappNavBtn" href="https://wa.me/27766321161" target="_blank" rel="noopener">WhatsApp Us</a>
       <button class="btn btn-primary" id="bookNowNavBtn" type="button">Book Your Clean</button>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -34,9 +34,9 @@
   <section class="hero" id="home">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Home &amp; corporate cleaning, Johannesburg</p>
+        <p class="eyebrow">Home cleaning &amp; laundry, Johannesburg</p>
         <h1>We care for your <em>home</em> like it’s ours.</h1>
-        <p class="hero-lead">Thoughtful home and workplace cleaning that gives you back time, calm and a space that feels beautifully cared for — with simple pricing and no hidden charges.</p>
+        <p class="hero-lead">Professional home cleaning and laundry care that gives you back time, calm and a space that feels beautifully looked after — with clear package pricing and products and equipment supplied where stated.</p>
         <div class="hero-ctas">
           <button class="btn btn-primary btn-lg" id="heroBookBtn" type="button">Book Your Clean</button>
           <a class="btn btn-outline btn-lg" href="#packages">View Packages</a>
@@ -68,7 +68,7 @@
           <span class="hv-card-meta">2 bedroom home · Standard</span>
         </div>
         <div class="hv-lines"></div>
-        <img src="/__l5e/assets-v1/5a4ccc2f-c251-4c6d-879b-44e4ad110b53/img_cd071c0e.png" alt="" class="hv-monogram" aria-hidden="true">
+        <img src="/__l5e/assets-v1/5a4ccc2f-c251-4c6d-879b-44e4ad110b53/img_cd071c0e.png" alt="" class="hv-monogram" width="84" height="84" aria-hidden="true">
       </div>
     </div>
   </section>
@@ -82,32 +82,25 @@
       </div>
       <div class="service-grid">
         <a href="#home-cleaning" class="service-card">
-          <span class="service-mark" aria-hidden="true">H</span>
           <h3>Elite Home Cleaning</h3>
           <p>Complete and streamlined cleaning options for apartments, homes and estates, priced by bedroom.</p>
           <span class="service-link">Explore packages</span>
         </a>
         <a href="#laundry" class="service-card">
-          <span class="service-mark" aria-hidden="true">L</span>
           <h3>Elite Laundry</h3>
           <p>Wash, dry and iron — in your home, or collected and returned to your door.</p>
           <span class="service-link">See laundry pricing</span>
         </a>
         <a href="#deep-cleaning" class="service-card">
-          <span class="service-mark" aria-hidden="true">D</span>
           <h3>Deep Cleaning</h3>
           <p>Specialist carpet, upholstery and intensive cleaning — coming soon.</p>
           <span class="service-link">Register interest</span>
         </a>
         <a href="#corporate" class="service-card">
-          <span class="service-mark" aria-hidden="true">C</span>
           <h3>Corporate Cleaning</h3>
           <p>Once-off and ongoing cleaning for offices and commercial spaces.</p>
           <span class="service-link">Request a quote</span>
         </a>
-      </div>
-      <div class="section-booking-action">
-        <button class="btn btn-primary" id="servicesBookBtn" type="button">Book Your Clean</button>
       </div>
     </div>
   </section>
@@ -340,16 +333,16 @@
           <div class="field-group">
             <span class="field-label">1. Choose how we help</span>
             <div class="chip-row" id="laundryServiceChips">
-              <button class="chip is-active" data-service="wash">On-site service</button>
-              <button class="chip" data-service="collect">Collection &amp; return</button>
+              <button class="chip is-active" type="button" data-service="wash" aria-pressed="true">On-site service</button>
+              <button class="chip" type="button" data-service="collect" aria-pressed="false">Collection &amp; return</button>
             </div>
           </div>
           <div class="field-group">
             <span class="field-label">2. Choose your load size</span>
             <div class="laundry-load-list" id="laundrySizeChips">
-              <button class="laundry-load-option chip is-active" data-size="small"><span><strong>Small</strong><small>Maximum 5kg</small></span><b data-load-price="small">R280</b></button>
-              <button class="laundry-load-option chip" data-size="medium"><span><strong>Medium</strong><small>Maximum 8kg</small></span><b data-load-price="medium">R380</b></button>
-              <button class="laundry-load-option chip" data-size="large"><span><strong>Large</strong><small>Maximum 12kg</small></span><b data-load-price="large">R520</b></button>
+              <button class="laundry-load-option chip is-active" type="button" data-size="small" aria-pressed="true"><span><strong>Small</strong><small>Maximum 5kg</small></span><b data-load-price="small">R280</b></button>
+              <button class="laundry-load-option chip" type="button" data-size="medium" aria-pressed="false"><span><strong>Medium</strong><small>Maximum 8kg</small></span><b data-load-price="medium">R380</b></button>
+              <button class="laundry-load-option chip" type="button" data-size="large" aria-pressed="false"><span><strong>Large</strong><small>Maximum 12kg</small></span><b data-load-price="large">R520</b></button>
             </div>
           </div>
           <div class="laundry-included" aria-live="polite">
@@ -497,20 +490,6 @@
     </div>
   </section>
 
-  <!-- ============ REVIEWS ============ -->
-  <section class="section reviews-section" aria-labelledby="reviews-title">
-    <div class="wrap reviews-layout">
-      <div>
-        <p class="eyebrow">Client reviews</p>
-        <h2 id="reviews-title">Trust is earned, one clean at a time.</h2>
-      </div>
-      <div class="reviews-awaiting" role="status">
-        <p>Verified client reviews will be shared here as they become available.</p>
-        <span>Real feedback only — never invented testimonials.</span>
-      </div>
-    </div>
-  </section>
-
   <!-- Toggle with ENABLE_ELITE_CLEAN_GUARANTEE in elite-script.js once the policy is confirmed. -->
   <section class="section guarantee-section" id="eliteGuarantee" aria-labelledby="guarantee-title" hidden>
     <div class="wrap guarantee-inner">
@@ -569,25 +548,26 @@
     </div>
 
     <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#home">Home</a>
+      <a href="#home-cleaning">Home Cleaning</a>
+      <a href="#laundry">Laundry</a>
+      <a href="#about">About</a>
+      <a href="#faqs">FAQs</a>
+    </div>
+
+    <div class="footer-col">
       <h4>Services</h4>
       <a href="#home-cleaning">Home Cleaning</a>
       <a href="#laundry">Elite Laundry</a>
       <a href="#corporate">Corporate Cleaning</a>
-      <a href="#deep-cleaning">Deep Cleaning</a>
-    </div>
-
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="#about">About</a>
-      <a href="#faqs">FAQs</a>
-      <a href="#contact">Contact</a>
-      <button type="button" class="footer-link-btn" id="footerBookBtn">Book Your Clean</button>
+      <a href="#deep-cleaning">Deep Cleaning <span class="footer-note">Coming soon</span></a>
     </div>
 
     <div class="footer-col">
       <h4>Contact</h4>
       <a href="mailto:info@elitecleaners.co.za">info@elitecleaners.co.za</a>
-      <a href="#" id="footerWhatsapp">076 632 1161 (WhatsApp)</a>
+      <a href="https://wa.me/27766321161" id="footerWhatsapp" target="_blank" rel="noopener">076 632 1161 (WhatsApp)</a>
       <div class="footer-hours">
         <p><span>Mon – Fri</span> 07:30 – 17:00</p>
         <p><span>Saturday</span> 08:00 – 14:00</p>
@@ -595,25 +575,14 @@
       </div>
     </div>
 
-    <div class="footer-col">
-      <h4>Follow</h4>
-      <div class="social-placeholders">
-        <span>Instagram</span>
-        <span>Facebook</span>
-      </div>
-    </div>
   </div>
   <div class="wrap footer-bottom">
     <p>&copy; <span id="year"></span> Elite Cleaners. All rights reserved.</p>
-    <div class="footer-legal">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms and Conditions</a>
-    </div>
   </div>
 </footer>
 
 <!-- ============ WHATSAPP FLOAT ============ -->
-<a href="#" id="whatsappFloat" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat to Elite Cleaners on WhatsApp">
+<a href="https://wa.me/27766321161" id="whatsappFloat" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat to Elite Cleaners on WhatsApp">
   <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/><path d="M12.001 2C6.478 2 2 6.477 2 12c0 1.986.577 3.837 1.573 5.396L2 22l4.746-1.545A9.953 9.953 0 0 0 12.001 22C17.524 22 22 17.523 22 12S17.524 2 12.001 2zm0 18.1a8.08 8.08 0 0 1-4.396-1.288l-.316-.19-2.83.92.93-2.76-.207-.328A8.09 8.09 0 1 1 12 20.1z"/></svg>
 </a>
 
