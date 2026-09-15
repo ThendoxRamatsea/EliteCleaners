@@ -106,16 +106,14 @@ const INCLUDED_ORDER = ["general", "lounge", "bedrooms", "bathrooms", "kitchen",
 
 /* Laundry pricing */
 const LAUNDRY_PRICING = {
-  wash: { small: 280, medium: 380, large: 520 },
-  collect: { small: 380, medium: 500, large: 650 }
+  wash: { small: 280, medium: 380, large: 520 }
 };
 const LAUNDRY_LABELS = {
-  service: { wash: "Wash, Dry & Iron", collect: "Collection, Wash, Dry & Iron + Return" },
+  service: { wash: "Wash, Dry, Iron, Fold & Hang — On-site" },
   size: { small: "Small (up to 5kg)", medium: "Medium (up to 8kg)", large: "Large (up to 12kg)" }
 };
 const LAUNDRY_INCLUDED = {
-  wash: ["Washing", "Drying", "Folding or ironing"],
-  collect: ["Collection", "Washing", "Drying", "Folding or ironing", "Packaging", "Delivery"]
+  wash: ["Washing", "Drying", "Ironing", "Folding", "Hanging"]
 };
 
 /* FAQs */
@@ -127,13 +125,11 @@ const FAQS = [
   { q: "Are there additional hourly charges?", a: "No. You pay the package price you selected, regardless of how long the clean takes." },
   { q: "How long will my cleaning take?", a: "This depends on the size of your home and the package selected. We'll be able to give you a better estimate once we understand your space — Elite Cleaners will confirm this with you." },
   { q: "Does Elite Home Clean include laundry and ironing?", a: "Yes. Elite Home Clean includes one load of laundry and ironing, sized according to your package — see the detailed inclusion panel for the weight limit." },
-  { q: "How do laundry collection and delivery services work?", a: "Choose the \"Collection, Wash, Dry & Iron + Return\" option when booking Elite Laundry. We'll collect your laundry, wash, dry, fold or iron it, and deliver it back to you." },
+  { q: "How does Elite Laundry work?", a: "Elite Laundry is an on-site service. We wash, dry, iron, fold and hang your laundry in your home." },
   { q: "How long does laundry take?", a: "Standard turnaround for Elite Laundry is 24 to 48 hours." },
   { q: "What areas do you service?", a: "We're based in Johannesburg. Send us your suburb when booking and we'll confirm whether we service your area." },
   { q: "Can I book on Saturdays?", a: "Yes. We operate on Saturdays from 08:00 to 14:00." },
   { q: "Do you operate on Sundays?", a: "We're closed on Sundays. Enquiries sent over the weekend will be attended to during our next operating hours." },
-  { q: "How do corporate quotes work?", a: "Complete the corporate quote form with details about your workplace, and we'll assess your space and put together a tailored cleaning solution." },
-  { q: "Are corporate prices fixed?", a: "Corporate prices displayed are starting prices. Final pricing is confirmed after we've assessed the size, condition, location and requirements of your premises." },
   { q: "How do I make a booking?", a: "Use the Book Your Clean button. Select your service and package, add your details, review your summary, and send your request via WhatsApp or email." },
   { q: "When is my booking confirmed?", a: "Submitting the booking form sends a booking request. Your booking is confirmed once Elite Cleaners has confirmed availability with you directly." },
   { q: "Can I request the same cleaner again?", a: "We'll always try to accommodate this where possible — let us know in your booking notes and we'll do our best." },
@@ -204,7 +200,7 @@ const FAQS = [
   /* ---------- calm section reveals ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
-    ".section-head, .service-choice-intro, .included-comparison, .pricing-grid, .promise-list, .care-gallery, .about-copy, .team-grid, .laundry-panel, .corp-showcase, .corp-quote-panel, .recurring-options, .standard-list, .how-steps, .faq-list"
+    ".section-head, .service-choice-intro, .included-comparison, .pricing-grid, .promise-list, .care-gallery, .about-copy, .team-grid, .laundry-panel, .deep-clean-section, .recurring-options, .standard-list, .how-steps, .faq-list"
   );
   revealTargets.forEach(function (target, index) {
     target.classList.add("scroll-reveal");
@@ -338,33 +334,36 @@ const FAQS = [
   const laundrySelection = document.getElementById("laundrySelection");
 
   function renderLaundry() {
-    const price = LAUNDRY_PRICING[laundryService][laundrySize];
+    const price = LAUNDRY_PRICING.wash[laundrySize];
     laundryPriceEl.textContent = "R" + price;
     document.querySelectorAll("[data-load-price]").forEach(function (el) {
-      el.textContent = "R" + LAUNDRY_PRICING[laundryService][el.getAttribute("data-load-price")];
+      el.textContent = "R" + LAUNDRY_PRICING.wash[el.getAttribute("data-load-price")];
     });
     const sizeLabel = LAUNDRY_LABELS.size[laundrySize].replace("up to", "maximum");
-    laundrySelection.textContent = sizeLabel + (laundryService === "collect" ? " · collection & return" : " · on-site");
+    laundrySelection.textContent = sizeLabel + " · on-site";
     const facts = [
       ["Washing", "Included"],
       ["Drying", "Included"],
-      ["Folding or ironing", "Included"],
-      ["Detergent supplied", "Please confirm when booking"],
-      ["Collection & delivery", laundryService === "collect" ? "Included" : "Not included — service is on-site"]
+      ["Ironing", "Included"],
+      ["Folding", "Included"],
+      ["Hanging", "Included"],
+      ["Service location", "On-site in your home"]
     ];
     laundryIncludedList.innerHTML = facts.map(function (fact) {
       return "<div><dt>" + fact[0] + "</dt><dd>" + fact[1] + "</dd></div>";
     }).join("");
   }
-  laundryServiceChips.addEventListener("click", function (e) {
-    const chip = e.target.closest(".chip");
-    if (!chip) return;
-    laundryServiceChips.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); c.setAttribute("aria-pressed", "false"); });
-    chip.classList.add("is-active");
-    chip.setAttribute("aria-pressed", "true");
-    laundryService = chip.getAttribute("data-service");
-    renderLaundry();
-  });
+  if (laundryServiceChips) {
+    laundryServiceChips.addEventListener("click", function (e) {
+      const chip = e.target.closest(".chip");
+      if (!chip) return;
+      laundryServiceChips.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); c.setAttribute("aria-pressed", "false"); });
+      chip.classList.add("is-active");
+      chip.setAttribute("aria-pressed", "true");
+      laundryService = chip.getAttribute("data-service");
+      renderLaundry();
+    });
+  }
   laundrySizeChips.addEventListener("click", function (e) {
     const chip = e.target.closest(".chip");
     if (!chip) return;
@@ -383,46 +382,14 @@ const FAQS = [
   /* ============================================================
      DEEP CLEANING interest
      ============================================================ */
-  document.getElementById("deepCleanInterestBtn").addEventListener("click", function () {
-    const msg = "Hi Elite Cleaners,\n\nI'd like to register my interest in your upcoming Deep Cleaning services.\n\nName:\nLocation:\nService I'm interested in (e.g. carpets, couches, upholstery):\n\nPlease let me know when this becomes available.\n\nThank you.";
-    window.open(waLink(msg), "_blank", "noopener");
-  });
-
-  /* ============================================================
-     CORPORATE FORM
-     ============================================================ */
-  const corpForm = document.getElementById("corpForm");
-  function buildCorpMessage() {
-    const fd = new FormData(corpForm);
-    const get = function (n) { return (fd.get(n) || "").toString().trim(); };
-    const lines = [
-      "Corporate Cleaning Quote Request",
-      "",
-      "Company Name: " + get("companyName"),
-      "Contact Person: " + get("contactPerson"),
-      "Phone Number: " + get("phone"),
-      "Email Address: " + get("email"),
-      "Business Address: " + get("address"),
-      "Approximate Floor Size: " + get("floorSize"),
-      "Number of Employees: " + get("employees"),
-      "Preferred Cleaning Frequency: " + get("frequency"),
-      "Preferred Cleaning Times: " + get("times"),
-      "Additional Requirements: " + get("notes"),
-      "",
-      "Please could you send through a quote. Thank you."
-    ];
-    return { text: lines.join("\n"), company: get("companyName") || "Company" };
+  const deepCleanInterestBtn = document.getElementById("deepCleanInterestBtn");
+  if (deepCleanInterestBtn) {
+    deepCleanInterestBtn.addEventListener("click", function () {
+      const msg = "Hi Elite Cleaners,\n\nI'd like to register my interest in your upcoming Deep Cleaning services.\n\nName:\nLocation:\nService I'm interested in (e.g. carpets, couches, upholstery):\n\nPlease let me know when this becomes available.\n\nThank you.";
+      window.open(waLink(msg), "_blank", "noopener");
+    });
   }
-  document.getElementById("corpQuoteWhatsapp").addEventListener("click", function () {
-    if (!corpForm.reportValidity()) return;
-    const m = buildCorpMessage();
-    window.open(waLink(m.text), "_blank", "noopener");
-  });
-  document.getElementById("corpQuoteEmail").addEventListener("click", function () {
-    if (!corpForm.reportValidity()) return;
-    const m = buildCorpMessage();
-    window.location.href = mailLink("Corporate Cleaning Quote Request | " + m.company, m.text);
-  });
+
 
   /* ============================================================
      FAQ ACCORDION
@@ -637,28 +604,16 @@ const FAQS = [
       });
 
     } else if (booking.service === "Laundry") {
-      html += '<div class="field-group"><span class="field-label">Laundry service</span><div class="chip-row" id="bkLaundryService">' +
-        '<button class="chip" data-service="wash">Wash, Dry & Iron</button>' +
-        '<button class="chip" data-service="collect">Collection, Wash, Dry & Iron + Return</button>' +
-        '</div></div>' +
-        '<div class="field-group"><span class="field-label">Load size</span><div class="chip-row" id="bkLaundrySize">' +
+      html += '<div class="field-group"><span class="field-label">Load size</span><div class="chip-row" id="bkLaundrySize">' +
         '<button class="chip" data-size="small">Small (up to 5kg)</button>' +
         '<button class="chip" data-size="medium">Medium (up to 8kg)</button>' +
         '<button class="chip" data-size="large">Large (up to 12kg)</button>' +
         '</div></div>';
       step2Content.innerHTML = html;
-      const svcChips = document.getElementById("bkLaundryService");
       const sizeChips = document.getElementById("bkLaundrySize");
-      booking.laundryService = booking.laundryService || "wash";
+      booking.laundryService = "wash";
       booking.laundrySize = booking.laundrySize || "small";
-      svcChips.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("is-active", c.getAttribute("data-service") === booking.laundryService); });
       sizeChips.querySelectorAll(".chip").forEach(function (c) { c.classList.toggle("is-active", c.getAttribute("data-size") === booking.laundrySize); });
-      svcChips.addEventListener("click", function (e) {
-        const chip = e.target.closest(".chip"); if (!chip) return;
-        svcChips.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); });
-        chip.classList.add("is-active");
-        booking.laundryService = chip.getAttribute("data-service");
-      });
       sizeChips.addEventListener("click", function (e) {
         const chip = e.target.closest(".chip"); if (!chip) return;
         sizeChips.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); });
@@ -666,17 +621,6 @@ const FAQS = [
         booking.laundrySize = chip.getAttribute("data-size");
       });
 
-    } else if (booking.service === "Corporate Cleaning") {
-      html += '<p class="section-lead">For corporate cleaning quotes, please use our dedicated corporate quote form — it collects the details we need about your workplace.</p>' +
-        '<button type="button" class="btn btn-outline" id="bkGoCorp">Go to Corporate Quote Form</button>';
-      step2Content.innerHTML = html;
-      document.getElementById("bkGoCorp").addEventListener("click", function () {
-        closeModal(bookingModal);
-        document.getElementById("corp-quote").scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    } else if (booking.service === "Deep Cleaning") {
-      html += '<p class="section-lead">Deep cleaning services are coming soon. We can register your interest and let you know as soon as bookings open.</p>';
-      step2Content.innerHTML = html;
     }
   }
 
@@ -742,11 +686,10 @@ const FAQS = [
       lines.push({ label: "Frequency", value: booking.frequency || "Once-Off" });
       lines.push({ label: "Price", value: pkg.price });
     } else if (booking.service === "Laundry") {
-      const svc = booking.laundryService || "wash";
       const size = booking.laundrySize || "small";
-      lines.push({ label: "Service", value: "Elite Laundry — " + LAUNDRY_LABELS.service[svc] });
+      lines.push({ label: "Service", value: "Elite Laundry — On-site" });
       lines.push({ label: "Load size", value: LAUNDRY_LABELS.size[size] });
-      lines.push({ label: "Price", value: "R" + LAUNDRY_PRICING[svc][size] });
+      lines.push({ label: "Price", value: "R" + LAUNDRY_PRICING.wash[size] });
     } else {
       lines.push({ label: "Service", value: booking.service || "—" });
     }
@@ -783,9 +726,8 @@ const FAQS = [
       if (pkg.priceValue === null) serviceLine += " I understand this requires a custom quote.";
       subject = "Elite Cleaners Booking Request | " + pkg.name;
     } else if (booking.service === "Laundry") {
-      const svc = booking.laundryService || "wash";
       const size = booking.laundrySize || "small";
-      serviceLine = "I would like to book Elite Laundry — " + LAUNDRY_LABELS.service[svc] + ", " + LAUNDRY_LABELS.size[size] + ".";
+      serviceLine = "I would like to book Elite Laundry — on-site " + LAUNDRY_LABELS.size[size] + ".";
       subject = "Elite Laundry Booking Request | " + LAUNDRY_LABELS.size[size].split(" ")[0] + " Load";
     } else if (booking.service === "Deep Cleaning") {
       serviceLine = "I'd like to register my interest in Elite Cleaners' upcoming Deep Cleaning services.";
