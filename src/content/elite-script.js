@@ -197,6 +197,23 @@ const FAQS = [
     footerObserver.observe(footer);
   }
 
+  /* ---------- gentle hero parallax ---------- */
+  const heroPhoto = document.getElementById("heroBgPhoto");
+  if (heroPhoto && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let parallaxTicking = false;
+    const updateHeroParallax = function () {
+      parallaxTicking = false;
+      const y = window.scrollY;
+      if (y > window.innerHeight * 1.2) return;
+      heroPhoto.style.transform = "translateY(" + (y * 0.18).toFixed(1) + "px)";
+    };
+    window.addEventListener("scroll", function () {
+      if (parallaxTicking) return;
+      parallaxTicking = true;
+      window.requestAnimationFrame(updateHeroParallax);
+    }, { passive: true });
+  }
+
   /* ---------- calm section reveals ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
