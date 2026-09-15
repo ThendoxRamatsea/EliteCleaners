@@ -826,7 +826,6 @@ h1, h2, h3, h4 { font-weight: 500; letter-spacing: 0; }
 .service-mark { border-radius: 50%; width: 42px; height: 42px; }
 .service-card h3 { font-size: 1.35rem; }
 
-.compare-strip { border: 1px solid var(--line); background: var(--cream); padding: 48px; }
 .price-card { padding: 34px 30px; border: 1px solid var(--line); border-top: 3px solid var(--gold-500); box-shadow: none; }
 .price-card:hover { border-color: var(--gold-500); box-shadow: var(--shadow-card); transform: translateY(-5px); }
 .pricing-promise { background: var(--navy-950); }
