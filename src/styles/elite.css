@@ -876,3 +876,146 @@ main > section.scroll-reveal.is-revealed { transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal { opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   MOBILE EDITORIAL POLISH
+   Keep the desktop composition intact while making the phone
+   experience tighter, more legible and easier to book from.
+   ============================================================ */
+@media (max-width: 720px) {
+  body { padding-bottom: 74px; }
+  .section { padding: 64px 0; }
+  .wrap { padding-inline: 18px; }
+  .section-head { margin-bottom: 34px; }
+  .section-head h2,
+  .care-gallery-intro h2,
+  .about-copy h2 { font-size: 2.15rem; line-height: 1.12; }
+  .section-lead { font-size: 1rem; line-height: 1.65; }
+
+  .site-header { backdrop-filter: saturate(160%) blur(14px); }
+  .header-inner { height: 70px; }
+  .brand-logo { height: 40px; }
+  .main-nav {
+    top: 70px;
+    left: 12px;
+    right: 12px;
+    padding: 6px 18px 18px;
+    border: 1px solid var(--line);
+    border-radius: 0 0 12px 12px;
+  }
+  .main-nav a { padding: 14px 0; font-size: 1rem; }
+  .nav-toggle { width: 42px; height: 42px; }
+
+  .hero { padding: 18px 0 64px; }
+  .hero-grid { gap: 30px; }
+  .hero-visual { height: min(92vw, 390px); }
+  .hv-panel-a { border-radius: 8px 32px 8px 8px; }
+  .hv-photo { object-position: 50% 52%; }
+  .hv-card {
+    left: 12px;
+    right: auto;
+    bottom: 12px;
+    width: min(68%, 240px);
+    padding: 15px 18px;
+  }
+  .hv-card-price { font-size: 1.55rem; }
+  .hv-card-meta { line-height: 1.35; }
+  .hero-copy h1 { font-size: 2.55rem; line-height: 1.06; max-width: 11ch; }
+  .hero-lead { font-size: 1.02rem; line-height: 1.68; }
+  .hero-ctas { gap: 10px; margin: 25px 0 36px; }
+  .hero-ctas .btn { flex: 1 1 calc(50% - 5px); padding-inline: 16px; }
+  .hero-trust { gap: 14px; }
+  .hero-trust-item { padding-top: 12px; }
+
+  .services-overview { padding-top: 64px; }
+  .service-card,
+  .service-card:nth-child(even) { min-height: 0; padding: 26px 0; }
+  .service-card p { margin-bottom: 2px; }
+
+  .compare-strip { gap: 26px; margin-bottom: 36px; padding: 26px 22px; }
+  .toggle-row { margin-bottom: 28px; }
+  .price-card { padding: 26px 22px; }
+  .price-card-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .price-card-actions .btn { min-width: 0; padding-inline: 12px; white-space: normal; line-height: 1.25; }
+
+  .pricing-promise-grid { gap: 28px; }
+  .promise-list { gap: 22px; }
+
+  .care-gallery-intro { margin-bottom: 28px; }
+  .care-gallery {
+    display: flex;
+    gap: 14px;
+    margin-inline: -18px;
+    padding-inline: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .care-gallery::-webkit-scrollbar { display: none; }
+  .care-photo,
+  .care-photo:last-child {
+    flex: 0 0 78%;
+    width: auto;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+  .care-photo img { border-radius: 8px 26px 8px 8px; }
+
+  .about-grid { gap: 34px; }
+  .about-visual { height: 330px; }
+  .av-block-a { width: 88%; height: 78%; border-radius: 8px 30px 8px 8px; }
+  .av-block-b { width: 48%; height: 39%; border-width: 6px; }
+  .team-intro { gap: 24px; margin-bottom: 34px; }
+  .training-note { padding: 20px; }
+  .team-grid { gap: 12px; }
+  .team-member-copy { padding: 13px 0 8px; }
+  .team-member h3 { font-size: .98rem; }
+
+  .laundry-selector,
+  .laundry-price-card,
+  .corp-quote-panel { padding: 26px 22px; }
+  .chip-row { gap: 8px; }
+  .chip { flex: 1 1 auto; padding: 10px 13px; }
+
+  .corp-showcase { gap: 28px; margin-bottom: 42px; }
+  .corp-photo img { border-radius: 8px 26px 8px 8px; }
+  .corp-price-row { gap: 18px; }
+  .corp-price-row span { min-width: 0; }
+  .corp-price-row strong { flex-shrink: 0; }
+  .corp-form-ctas { display: grid; grid-template-columns: 1fr; }
+
+  .why-grid { gap: 26px; }
+  .how-steps li { gap: 16px; padding: 18px 0; }
+  .how-num { width: 36px; height: 36px; }
+  .faq-item { padding: 16px 0; }
+  .final-cta { padding-block: 76px; }
+
+  .site-footer { padding-top: 56px; }
+  .footer-grid { gap: 30px; padding-bottom: 36px; }
+  .footer-col { gap: 10px; }
+
+  .mobile-sticky-cta { padding: 10px 14px max(10px, env(safe-area-inset-bottom)); }
+  .whatsapp-float { right: 14px; bottom: 82px; width: 48px; height: 48px; }
+  .modal-panel { max-height: 92dvh; padding: 36px 20px 24px; }
+  .booking-progress { margin-bottom: 22px; }
+  .option-grid,
+  .option-grid-compact,
+  .option-grid-2 { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .option-card { padding: 15px 14px; font-size: .9rem; }
+
+  .scroll-reveal {
+    transform: translateY(16px);
+    transition-duration: .55s;
+    transition-delay: min(var(--reveal-delay, 0ms), 70ms);
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-visual { height: min(92vw, 370px); }
+  .hero-copy h1 { font-size: 2.4rem; }
+  .hero-ctas .btn { width: auto; }
+  .price-card-actions { grid-template-columns: 1fr; }
+  .option-grid,
+  .option-grid-compact,
+  .option-grid-2 { grid-template-columns: 1fr; }
+}
