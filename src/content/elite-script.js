@@ -282,14 +282,19 @@ const FAQS = [
     renderPricingGrid(mode);
   }
 
-  toggleStandard.addEventListener("click", function () { setMode("standard"); });
-  toggleQuick.addEventListener("click", function () { setMode("quick"); });
-  document.querySelectorAll("[data-package-mode]").forEach(function (button) {
-    button.addEventListener("click", function () {
-      setMode(button.getAttribute("data-package-mode"));
-      document.getElementById("packages").scrollIntoView({ behavior: "smooth", block: "center" });
+  if (pricingGrid) {
+    toggleStandard.addEventListener("click", function () { setMode("standard"); });
+    toggleQuick.addEventListener("click", function () { setMode("quick"); });
+    document.querySelectorAll("[data-package-mode]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        setMode(button.getAttribute("data-package-mode"));
+        const pkgSection = document.getElementById("packages");
+        if (pkgSection) pkgSection.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
     });
-  });
+    const urlMode = new URLSearchParams(window.location.search).get("mode");
+    setMode(urlMode === "quick" ? "quick" : "standard");
+  }
 
   function findPackage(id) {
     return PACKAGES.standard.concat(PACKAGES.quick).find(function (p) { return p.id === id; });
@@ -334,7 +339,7 @@ const FAQS = [
     openModal(includedModal);
   }
 
-  pricingGrid.addEventListener("click", function (e) {
+  if (pricingGrid) pricingGrid.addEventListener("click", function (e) {
     const includedBtn = e.target.closest("[data-included]");
     const selectBtn = e.target.closest("[data-select]");
     if (includedBtn) openIncluded(includedBtn.getAttribute("data-included"));
@@ -388,20 +393,22 @@ const FAQS = [
       renderLaundry();
     });
   }
-  laundrySizeChips.addEventListener("click", function (e) {
-    const chip = e.target.closest(".chip");
-    if (!chip) return;
-    laundrySizeChips.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); c.setAttribute("aria-pressed", "false"); });
-    chip.classList.add("is-active");
-    chip.setAttribute("aria-pressed", "true");
-    laundrySize = chip.getAttribute("data-size");
+  if (laundrySizeChips) {
+    laundrySizeChips.addEventListener("click", function (e) {
+      const chip = e.target.closest(".chip");
+      if (!chip) return;
+      laundrySizeChips.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); c.setAttribute("aria-pressed", "false"); });
+      chip.classList.add("is-active");
+      chip.setAttribute("aria-pressed", "true");
+      laundrySize = chip.getAttribute("data-size");
+      renderLaundry();
+    });
     renderLaundry();
-  });
-  renderLaundry();
 
-  document.getElementById("laundryBookBtn").addEventListener("click", function () {
-    startBookingWithLaundry(laundryService, laundrySize);
-  });
+    document.getElementById("laundryBookBtn").addEventListener("click", function () {
+      startBookingWithLaundry(laundryService, laundrySize);
+    });
+  }
 
   /* ============================================================
      DEEP CLEANING interest
@@ -412,7 +419,7 @@ const FAQS = [
      FAQ ACCORDION
      ============================================================ */
   const faqList = document.getElementById("faqList");
-  FAQS.forEach(function (faq) {
+  if (faqList) FAQS.forEach(function (faq) {
     const item = document.createElement("details");
     item.className = "faq-item";
     item.innerHTML = "<summary>" + faq.q + "</summary><p>" + faq.a + "</p>";
@@ -523,12 +530,10 @@ const FAQS = [
     openModal(bookingModal);
   }
 
-  document.getElementById("bookNowNavBtn").addEventListener("click", openBookingModal);
-  document.getElementById("heroBookBtn").addEventListener("click", openBookingModal);
-  document.getElementById("pricingBookBtn").addEventListener("click", openBookingModal);
-  document.getElementById("finalCtaBookBtn").addEventListener("click", openBookingModal);
-
-  document.getElementById("mobileStickyBookBtn").addEventListener("click", openBookingModal);
+  ["bookNowNavBtn", "heroBookBtn", "pricingBookBtn", "finalCtaBookBtn", "mobileStickyBookBtn"].forEach(function (id) {
+    const btn = document.getElementById(id);
+    if (btn) btn.addEventListener("click", openBookingModal);
+  });
 
   function startBookingWithPackage(pkgId) {
     resetBooking();
@@ -777,5 +782,4 @@ const FAQS = [
   /* ---------- init ---------- */
   const guaranteeSection = document.getElementById("eliteGuarantee");
   if (ENABLE_ELITE_CLEAN_GUARANTEE && guaranteeSection) guaranteeSection.hidden = false;
-  setMode("standard");
 })();

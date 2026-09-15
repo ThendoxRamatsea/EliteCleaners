@@ -1046,3 +1046,24 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   transition: opacity 0.85s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms),
               transform 0.85s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms);
 }
+
+/* ============ PACKAGES PAGE ============ */
+.packages-page-section {
+  padding-top: clamp(150px, 20vh, 190px);
+}
+.packages-page-title {
+  font-family: var(--font-display, "Lora", serif);
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  line-height: 1.12;
+  font-weight: 500;
+  margin: 0 0 0.5em;
+  color: var(--ink, #111A26);
+}
+.section-head .packages-page-title::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 2px;
+  background: #B99752;
+  margin-top: 18px;
+}
