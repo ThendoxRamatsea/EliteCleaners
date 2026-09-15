@@ -239,8 +239,28 @@ const FAQS = [
         entry.target.classList.add("is-revealed");
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -5% 0px" });
     revealTargets.forEach(function (target) { revealObserver.observe(target); });
+
+    // Safety sweep: anything already in (or near) the viewport must never stay hidden,
+    // e.g. sections whose content is injected after the observer was attached.
+    const sweep = function () {
+      revealTargets.forEach(function (target) {
+        if (target.classList.contains("is-revealed")) return;
+        const rect = target.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 120 && rect.bottom > -120) {
+          target.classList.add("is-revealed");
+          revealObserver.unobserve(target);
+        }
+      });
+    };
+    window.addEventListener("scroll", sweep, { passive: true });
+    window.addEventListener("resize", sweep, { passive: true });
+    setTimeout(sweep, 400);
+    setTimeout(sweep, 1200);
+    setTimeout(function () {
+      revealTargets.forEach(function (target) { target.classList.add("is-revealed"); });
+    }, 4000);
   }
 
   /* ============================================================
