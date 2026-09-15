@@ -7,6 +7,8 @@
 
 const WHATSAPP_NUMBER = "27766321161"; // 076 632 1161 in international format
 const EMAIL_ADDRESS = "info@elitecleaners.co.za";
+// Proposed policy: change to true only after the business confirms the guarantee.
+const ENABLE_ELITE_CLEAN_GUARANTEE = false;
 
 const PACKAGES = {
   standard: [
@@ -161,7 +163,7 @@ const FAQS = [
 
   /* ---------- generic WhatsApp / footer links ---------- */
   const genericWaMsg = "Hi Elite Cleaners, I'd like to find out more about your services.";
-  ["whatsappNavBtn", "whatsappFloat", "footerWhatsapp", "finalCtaWhatsapp"].forEach(function (id) {
+  ["whatsappNavBtn", "whatsappFloat", "footerWhatsapp"].forEach(function (id) {
     const el = document.getElementById(id);
     if (el) el.href = waLink(genericWaMsg);
   });
@@ -193,7 +195,7 @@ const FAQS = [
   /* ---------- calm section reveals ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
-    "main > section:not(.hero), .section-head, .service-card, .service-choice, .included-comparison, .price-card, .promise-list li, .care-photo, .about-copy, .team-member, .laundry-panel, .corp-once-off, .corp-photo, .corp-quote-panel, .why-item, .how-steps li, .faq-item"
+    "main > section:not(.hero), .section-head, .service-card, .service-choice, .included-comparison, .price-card, .promise-list li, .care-photo, .about-copy, .team-member, .laundry-panel, .corp-once-off, .corp-photo, .corp-quote-panel, .recurring-option, .standard-item, .reviews-awaiting, .how-steps li, .faq-item"
   );
   revealTargets.forEach(function (target, index) {
     target.classList.add("scroll-reveal");
@@ -489,6 +491,7 @@ const FAQS = [
     packageId: null,      // for home cleaning
     laundryService: null,
     laundrySize: null,
+    frequency: null,
     details: {}
   };
 
@@ -497,6 +500,7 @@ const FAQS = [
     booking.packageId = null;
     booking.laundryService = null;
     booking.laundrySize = null;
+    booking.frequency = null;
     booking.details = {};
     bookingDetailsForm.reset();
   }
@@ -526,6 +530,15 @@ const FAQS = [
 
   document.getElementById("bookNowNavBtn").addEventListener("click", openBookingModal);
   document.getElementById("heroBookBtn").addEventListener("click", openBookingModal);
+  document.getElementById("servicesBookBtn").addEventListener("click", openBookingModal);
+  document.getElementById("pricingBookBtn").addEventListener("click", openBookingModal);
+  document.getElementById("recurringBookBtn").addEventListener("click", function () {
+    resetBooking();
+    booking.service = "Home Cleaning";
+    booking.frequency = "Weekly";
+    openModal(bookingModal);
+    goToStep(2);
+  });
   document.getElementById("finalCtaBookBtn").addEventListener("click", openBookingModal);
   document.getElementById("mobileStickyBookBtn").addEventListener("click", openBookingModal);
   document.getElementById("footerBookBtn").addEventListener("click", openBookingModal);
@@ -563,10 +576,27 @@ const FAQS = [
         '<button class="chip" data-type="standard">Elite Home Clean</button>' +
         '<button class="chip" data-type="quick">Elite Quick Clean</button>' +
         '</div></div>' +
-        '<div class="field-group"><span class="field-label">Package</span><div class="option-grid option-grid-compact" id="bkPackageOptions"></div></div>';
+        '<div class="field-group"><span class="field-label">Package</span><div class="option-grid option-grid-compact" id="bkPackageOptions"></div></div>' +
+        '<div class="field-group"><span class="field-label">Cleaning frequency</span><div class="chip-row" id="bkFrequencyChips">' +
+          '<button class="chip" data-frequency="Weekly">Weekly</button>' +
+          '<button class="chip" data-frequency="Fortnightly">Fortnightly</button>' +
+          '<button class="chip" data-frequency="Once-Off">Once-Off</button>' +
+        '</div></div>';
       step2Content.innerHTML = html;
       const typeChips = document.getElementById("bkTypeChips");
       const pkgOptions = document.getElementById("bkPackageOptions");
+      const frequencyChips = document.getElementById("bkFrequencyChips");
+      booking.frequency = booking.frequency || "Once-Off";
+      frequencyChips.querySelectorAll(".chip").forEach(function (c) {
+        c.classList.toggle("is-active", c.getAttribute("data-frequency") === booking.frequency);
+      });
+      frequencyChips.addEventListener("click", function (e) {
+        const chip = e.target.closest(".chip");
+        if (!chip) return;
+        frequencyChips.querySelectorAll(".chip").forEach(function (c) { c.classList.remove("is-active"); });
+        chip.classList.add("is-active");
+        booking.frequency = chip.getAttribute("data-frequency");
+      });
 
       function renderPkgOptions(type) {
         pkgOptions.innerHTML = PACKAGES[type].map(function (p) {
@@ -700,6 +730,7 @@ const FAQS = [
       const pkg = findPackage(booking.packageId);
       lines.push({ label: "Service", value: pkg.id.indexOf("qk-") === 0 ? "Elite Quick Clean" : "Elite Home Clean" });
       lines.push({ label: "Home size", value: pkg.beds });
+      lines.push({ label: "Frequency", value: booking.frequency || "Once-Off" });
       lines.push({ label: "Price", value: pkg.price });
     } else if (booking.service === "Laundry") {
       const svc = booking.laundryService || "wash";
@@ -739,6 +770,7 @@ const FAQS = [
       const pkg = findPackage(booking.packageId);
       const type = pkg.id.indexOf("qk-") === 0 ? "Elite Quick Clean" : "Elite Home Clean";
       serviceLine = "I would like to book " + type + " for a " + pkg.beds + " home.";
+      serviceLine += " Preferred frequency: " + (booking.frequency || "Once-Off") + ".";
       if (pkg.priceValue === null) serviceLine += " I understand this requires a custom quote.";
       subject = "Elite Cleaners Booking Request | " + pkg.name;
     } else if (booking.service === "Laundry") {
@@ -784,5 +816,7 @@ const FAQS = [
   });
 
   /* ---------- init ---------- */
+  const guaranteeSection = document.getElementById("eliteGuarantee");
+  if (ENABLE_ELITE_CLEAN_GUARANTEE && guaranteeSection) guaranteeSection.hidden = false;
   setMode("standard");
 })();
