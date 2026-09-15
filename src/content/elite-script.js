@@ -183,18 +183,41 @@ const FAQS = [
   /* ---------- header shadow on scroll + mobile sticky CTA ---------- */
   const header = document.getElementById("siteHeader");
   const stickyCta = document.getElementById("mobileStickyCta");
+  const whatsappFloat = document.getElementById("whatsappFloat");
   let lastY = window.scrollY;
-  window.addEventListener("scroll", function () {
+  const syncScrollChrome = function () {
     header.classList.toggle("is-scrolled", window.scrollY > 12);
     stickyCta.classList.toggle("is-visible", window.scrollY > 480);
+    if (whatsappFloat) whatsappFloat.classList.toggle("is-hidden", window.scrollY < 380);
+  };
+  window.addEventListener("scroll", function () {
+    syncScrollChrome();
     lastY = window.scrollY;
   }, { passive: true });
+  syncScrollChrome();
   const footer = document.getElementById("contact");
   if ("IntersectionObserver" in window && footer) {
     const footerObserver = new IntersectionObserver(function (entries) {
       stickyCta.classList.toggle("is-footer-visible", entries[0].isIntersecting);
     }, { threshold: 0.05 });
     footerObserver.observe(footer);
+  }
+
+  /* ---------- gentle hero parallax ---------- */
+  const heroPhoto = document.getElementById("heroBgPhoto");
+  if (heroPhoto && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let parallaxTicking = false;
+    const updateHeroParallax = function () {
+      parallaxTicking = false;
+      const y = window.scrollY;
+      if (y > window.innerHeight * 1.2) return;
+      heroPhoto.style.transform = "translateY(" + (y * 0.18).toFixed(1) + "px)";
+    };
+    window.addEventListener("scroll", function () {
+      if (parallaxTicking) return;
+      parallaxTicking = true;
+      window.requestAnimationFrame(updateHeroParallax);
+    }, { passive: true });
   }
 
   /* ---------- calm section reveals ---------- */
