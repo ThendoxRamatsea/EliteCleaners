@@ -396,9 +396,11 @@ button { font-family: inherit; }
 }
 @media (max-width: 720px) {
   .care-gallery-intro { grid-template-columns: 1fr; gap: 20px; margin-bottom: 36px; }
-  .care-gallery { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .care-photo-raised { margin-top: 28px; }
-  .care-photo:last-child { grid-column: 1 / -1; width: calc(50% - 7px); margin-left: auto; }
+  .care-gallery { grid-template-columns: 1fr; gap: 28px; }
+  .care-photo-raised { margin-top: 0; }
+  .care-photo:last-child { width: 100%; margin-left: 0; }
+  .care-photo img { aspect-ratio: 4 / 3; border-radius: 10px 30px 10px 10px; }
+  .care-photo:nth-child(2) img { border-radius: 10px 30px 10px 10px; }
   .care-photo img { border-radius: 8px 24px 8px 8px; }
 }
 
