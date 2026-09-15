@@ -680,3 +680,160 @@ body.modal-open { overflow: hidden; }
     background-image: linear-gradient(180deg, rgba(11,20,38,0.94), rgba(11,20,38,0.9)), url("/__l5e/assets-v1/7705c6fc-2495-4607-9afb-89ff5fe19a8f/deep-clean.jpg");
   }
 }
+
+/* ============================================================
+   2026 EDITORIAL REFRESH
+   Boutique hospitality warmth, restrained navy and antique gold
+   ============================================================ */
+:root {
+  --navy-950: #111A26;
+  --navy-900: #172331;
+  --navy-800: #263646;
+  --navy-700: #415363;
+  --gold-600: #9E7E43;
+  --gold-500: #B99752;
+  --gold-400: #D0B87C;
+  --gold-100: #EEE5D3;
+  --cream: #F1EEE8;
+  --paper: #FCFBF8;
+  --ink: #111A26;
+  --ink-soft: #5D6670;
+  --ink-faint: #7B8794;
+  --line: #DED9CF;
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --shadow-card: 0 16px 44px rgba(17,26,38,0.08);
+  --shadow-lift: 0 28px 70px rgba(17,26,38,0.16);
+  --container: 1240px;
+  --font-display: "Lora", Georgia, serif;
+  --font-body: "Nunito Sans", sans-serif;
+}
+
+body { background: var(--paper); }
+h1, h2, h3, h4 { font-weight: 500; letter-spacing: 0; }
+.section { padding: 120px 0; }
+.section-head { margin-bottom: 56px; }
+.section-head h2 { font-size: clamp(2rem, 3.6vw, 3.25rem); max-width: 16ch; }
+.section-lead { font-size: 1.08rem; line-height: 1.75; }
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; }
+.bg-wash { background: var(--cream); }
+
+.btn { border-radius: 999px; padding: 13px 24px; transition: transform .35s cubic-bezier(.22,1,.36,1), background-color .25s ease, border-color .25s ease, color .25s ease, box-shadow .35s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--navy-950); box-shadow: 0 10px 28px rgba(17,26,38,.12); }
+.btn-primary:hover { background: var(--gold-600); box-shadow: 0 14px 34px rgba(158,126,67,.2); }
+
+.site-header { background: color-mix(in srgb, var(--paper) 90%, transparent); }
+.header-inner { height: 88px; }
+.brand-logo { height: 52px; }
+.main-nav { gap: 28px; }
+.main-nav a { color: var(--ink-soft); font-size: .9rem; }
+
+.hero { min-height: calc(100svh - 88px); padding: 68px 0 88px; background: var(--paper); display: grid; align-items: center; }
+.hero-grid { grid-template-columns: minmax(0,.92fr) minmax(440px,.78fr); gap: clamp(56px,8vw,112px); }
+.hero-copy h1 { font-size: clamp(3.2rem,5.6vw,5.35rem); line-height: 1.03; max-width: 10ch; animation-duration: .9s; }
+.hero-copy h1 em { color: var(--gold-600); font-weight: 400; }
+.hero-lead { font-size: 1.15rem; line-height: 1.78; max-width: 49ch; }
+.hero-ctas { margin: 34px 0 50px; }
+.hero-trust { gap: 26px; }
+.hero-trust-item { border-top: 1px solid var(--line); padding-top: 16px; }
+.hero-trust-item strong { font-family: var(--font-body); font-size: .88rem; font-weight: 700; }
+.hero-trust-item span { line-height: 1.5; }
+.hero-visual { height: min(68vw,680px); max-height: 680px; }
+.hv-panel-a { inset: 0 0 0 8%; width: 92%; height: 100%; border-radius: 8px 56px 8px 8px; box-shadow: var(--shadow-lift); }
+.hv-panel-b, .hv-lines, .hv-monogram { display: none; }
+.hv-photo { opacity: 1; object-position: center; }
+.hv-card { left: -5%; bottom: 7%; border: 1px solid var(--line); border-bottom: 0; border-radius: 8px; padding: 22px 26px; }
+
+.services-overview { padding-top: 104px; }
+.service-grid { grid-template-columns: repeat(2,1fr); gap: 0; background: transparent; border: 0; }
+.service-card { min-height: 230px; padding: 38px 8% 38px 0; border-top: 1px solid var(--line); box-shadow: none; }
+.service-card:nth-child(even) { padding-left: 8%; border-left: 1px solid var(--line); }
+.service-card:hover { background: transparent; transform: translateX(6px); }
+.service-mark { border-radius: 50%; width: 42px; height: 42px; }
+.service-card h3 { font-size: 1.35rem; }
+
+.compare-strip { border: 1px solid var(--line); background: var(--cream); padding: 48px; }
+.price-card { padding: 34px 30px; border: 1px solid var(--line); border-top: 3px solid var(--gold-500); box-shadow: none; }
+.price-card:hover { border-color: var(--gold-500); box-shadow: var(--shadow-card); transform: translateY(-5px); }
+.pricing-promise { background: var(--navy-950); }
+
+.about-grid { grid-template-columns: 1.05fr .95fr; gap: clamp(64px,9vw,128px); }
+.about-visual { height: 640px; }
+.av-block-a { width: 84%; height: 78%; border-radius: 8px 48px 8px 8px; }
+.av-block-b { width: 52%; height: 42%; border: 8px solid var(--cream); border-radius: 8px; }
+.about-copy h2 { font-size: clamp(2.35rem,4vw,3.6rem); }
+.about-copy p { line-height: 1.78; }
+
+.team-section { background: var(--navy-950); }
+.training-note { background: rgba(255,255,255,.05); border: 1px solid rgba(185,151,82,.45); padding: 24px; border-radius: 8px; }
+.team-grid { gap: 24px; }
+.team-member { background: transparent; border: 0; color: var(--paper); }
+.team-headshot-placeholder { border-radius: 8px 30px 8px 8px; border: 1px solid rgba(185,151,82,.35); }
+.team-member h3 { color: var(--paper); }
+.team-member-copy { padding-left: 0; }
+
+.laundry-section { background: var(--paper); }
+.laundry-panel { border: 0; box-shadow: var(--shadow-card); }
+.laundry-selector { padding: 52px; }
+.laundry-price-card { padding: 52px; justify-content: center; }
+.chip { border-radius: 999px; }
+.corp-quote-panel { background: var(--cream); padding: 56px; }
+.field input, .field select, .field textarea { border-radius: 6px; padding: 13px 15px; }
+.why-grid { gap: 48px 6%; }
+.why-item { border-top-width: 1px; }
+.how-section, .faq-section { background: var(--cream); }
+.how-steps { max-width: 860px; margin-left: auto; }
+.faq-list { margin-left: auto; }
+.final-cta { padding-block: 132px; }
+.final-cta h2 { font-size: clamp(2.4rem,4vw,4rem); }
+
+.scroll-reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms), transform .8s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms); }
+.scroll-reveal.is-revealed { opacity: 1; transform: translateY(0); }
+main > section.scroll-reveal { transform: none; }
+main > section.scroll-reveal.is-revealed { transform: none; }
+
+@media (max-width: 980px) {
+  .hero { min-height: auto; padding-top: 32px; }
+  .hero-grid { gap: 44px; }
+  .hero-visual { height: 560px; max-height: none; }
+  .hv-panel-a { left: 0; width: 100%; border-radius: 8px 38px 8px 8px; }
+  .hero-copy h1 { max-width: 12ch; }
+  .about-visual { height: 500px; }
+}
+
+@media (max-width: 720px) {
+  .section { padding: 82px 0; }
+  .wrap { padding-inline: 20px; }
+  .header-inner { height: 72px; }
+  .main-nav { top: 72px; }
+  .hero { padding: 22px 0 76px; }
+  .hero-grid { gap: 36px; }
+  .hero-visual { height: min(110vw,480px); }
+  .hv-card { left: 14px; right: 14px; bottom: 14px; }
+  .hero-copy h1 { font-size: clamp(2.65rem,13vw,4rem); }
+  .hero-trust { grid-template-columns: 1fr 1fr; }
+  .hero-trust-item:last-child { grid-column: 1 / -1; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service-card, .service-card:nth-child(even) { padding: 30px 0; border-left: 0; }
+  .compare-strip { padding: 30px 24px; }
+  .about-visual { height: 410px; }
+  .about-grid { gap: 48px; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .laundry-selector, .laundry-price-card, .corp-quote-panel { padding: 30px 24px; }
+  .final-cta { padding-block: 92px; }
+}
+
+@media (max-width: 430px) {
+  .header-actions .btn-primary { display: none; }
+  .brand-logo { height: 42px; }
+  .hero-visual { height: 420px; }
+  .hero-trust { grid-template-columns: 1fr; }
+  .hero-trust-item:last-child { grid-column: auto; }
+  .hero-ctas .btn { width: 100%; }
+  .team-grid { gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal { opacity: 1; transform: none; }
+}

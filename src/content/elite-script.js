@@ -190,6 +190,28 @@ const FAQS = [
     lastY = window.scrollY;
   }, { passive: true });
 
+  /* ---------- calm section reveals ---------- */
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealTargets = document.querySelectorAll(
+    "main > section:not(.hero), .section-head, .service-card, .price-card, .promise-list li, .about-copy, .team-member, .laundry-panel, .corp-once-off, .corp-quote-panel, .why-item, .how-steps li, .faq-item"
+  );
+  revealTargets.forEach(function (target, index) {
+    target.classList.add("scroll-reveal");
+    target.style.setProperty("--reveal-delay", String(index % 4 * 70) + "ms");
+  });
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealTargets.forEach(function (target) { target.classList.add("is-revealed"); });
+  } else {
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
+    revealTargets.forEach(function (target) { revealObserver.observe(target); });
+  }
+
   /* ============================================================
      PRICING GRID
      ============================================================ */
