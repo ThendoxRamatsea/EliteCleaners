@@ -10,18 +10,18 @@ const EMAIL_ADDRESS = "info@elitecleaners.co.za";
 
 const PACKAGES = {
   standard: [
-    { id: "std-essential", name: "Elite Essential", beds: "1 bedroom", price: "R450", priceValue: 450, desc: "A full clean for a one-bedroom home, laundry and ironing included." },
-    { id: "std-signature-2", name: "Elite Signature", beds: "2 bedrooms", price: "R600", priceValue: 600, desc: "Our most popular package for a two-bedroom home, laundry and ironing included." },
-    { id: "std-signature-3", name: "Elite Signature", beds: "3 bedrooms", price: "R700", priceValue: 700, desc: "A full clean for a three-bedroom home, laundry and ironing included." },
-    { id: "std-premium", name: "Elite Premium", beds: "4 bedrooms", price: "R1,000", priceValue: 1000, desc: "Comprehensive cleaning for a four-bedroom home, laundry and ironing included." },
-    { id: "std-estate", name: "Elite Estate", beds: "4+ bedrooms", price: "From R1,200", priceValue: null, desc: "For larger homes and estates. Custom quote required." }
+    { id: "std-essential", name: "Elite Home Clean", beds: "1 bedroom", price: "R450", priceValue: 450, desc: "Complete home cleaning with one small laundry load and ironing." },
+    { id: "std-signature-2", name: "Elite Home Clean", beds: "2 bedrooms", price: "R600", priceValue: 600, desc: "Complete home cleaning with one medium laundry load and ironing." },
+    { id: "std-signature-3", name: "Elite Home Clean", beds: "3 bedrooms", price: "R700", priceValue: 700, desc: "Complete home cleaning with one medium laundry load and ironing." },
+    { id: "std-premium", name: "Elite Home Clean", beds: "4 bedrooms", price: "R1,000", priceValue: 1000, desc: "Complete home cleaning with one large laundry load and ironing." },
+    { id: "std-estate", name: "Elite Home Clean", beds: "4+ bedrooms", price: "From R1,200", priceValue: null, desc: "Complete cleaning for larger homes and estates. Custom quote required." }
   ],
   quick: [
-    { id: "qk-essential", name: "Elite Quick Essential", beds: "1 bedroom", price: "R350", priceValue: 350, desc: "A professional clean for a one-bedroom home, without laundry." },
-    { id: "qk-signature-2", name: "Elite Quick Signature", beds: "2 bedrooms", price: "R450", priceValue: 450, desc: "A professional clean for a two-bedroom home, without laundry." },
-    { id: "qk-signature-3", name: "Elite Quick Signature", beds: "3 bedrooms", price: "R550", priceValue: 550, desc: "A professional clean for a three-bedroom home, without laundry." },
-    { id: "qk-premium", name: "Elite Quick Premium", beds: "4 bedrooms", price: "R700", priceValue: 700, desc: "A professional clean for a four-bedroom home, without laundry." },
-    { id: "qk-estate", name: "Elite Quick Estate", beds: "4+ bedrooms", price: "From R900", priceValue: null, desc: "For larger homes and estates. Custom quote required." }
+    { id: "qk-essential", name: "Elite Quick Clean", beds: "1 bedroom", price: "R350", priceValue: 350, desc: "A streamlined home refresh without laundry or ironing." },
+    { id: "qk-signature-2", name: "Elite Quick Clean", beds: "2 bedrooms", price: "R450", priceValue: 450, desc: "A streamlined home refresh without laundry or ironing." },
+    { id: "qk-signature-3", name: "Elite Quick Clean", beds: "3 bedrooms", price: "R550", priceValue: 550, desc: "A streamlined home refresh without laundry or ironing." },
+    { id: "qk-premium", name: "Elite Quick Clean", beds: "4 bedrooms", price: "R700", priceValue: 700, desc: "A streamlined home refresh without laundry or ironing." },
+    { id: "qk-estate", name: "Elite Quick Clean", beds: "4+ bedrooms", price: "From R900", priceValue: null, desc: "A streamlined refresh for larger homes and estates. Custom quote required." }
   ]
 };
 
@@ -79,7 +79,7 @@ const INCLUDED = {
 /* Standard-only sections */
 const STANDARD_ONLY_SECTIONS = {
   laundryServices: {
-    title: "Laundry & Ironing (included in Elite Standard)",
+      title: "Laundry & Ironing (included in Elite Home Clean)",
     items: [
       "Elite Essential — one small basket, up to 5kg",
       "Elite Signature (2 & 3 bedroom) — one medium basket, up to 8kg",
@@ -118,13 +118,13 @@ const LAUNDRY_INCLUDED = {
 
 /* FAQs */
 const FAQS = [
-  { q: "What is included in my cleaning?", a: "Every package covers a full room-by-room clean — living areas, bedrooms, bathrooms, kitchen and final presentation. Use the \"What's Included\" panel on each package to see the exact scope for Elite Standard and Elite Quick." },
-  { q: "What is the difference between Elite Standard and Elite Quick?", a: "Elite Standard is our full-service clean and includes laundry and ironing, plus deeper cleaning such as interior appliance cleaning and pet-related cleaning. Elite Quick covers the same rooms with a lighter, faster scope and doesn't include laundry, ironing or deep appliance interiors." },
+  { q: "What is included in my cleaning?", a: "Every package covers living areas, bedrooms, bathrooms, the kitchen and final presentation. Use the comparison and detailed inclusion panel to see the exact scope for Elite Home Clean and Elite Quick Clean." },
+  { q: "What is the difference between Elite Home Clean and Elite Quick Clean?", a: "Elite Home Clean is our complete service and includes laundry, ironing, selected appliance interiors and pet-related cleaning. Elite Quick Clean covers the same main rooms with a streamlined refresh and doesn't include those premium extras." },
   { q: "Do I need to provide cleaning products?", a: "No. Every Elite Cleaners package includes the products used in your home — there are no hidden product fees." },
   { q: "Do I need to provide cleaning equipment?", a: "No. Our cleaners bring their own equipment, at no extra charge to you." },
   { q: "Are there additional hourly charges?", a: "No. You pay the package price you selected, regardless of how long the clean takes." },
   { q: "How long will my cleaning take?", a: "This depends on the size of your home and the package selected. We'll be able to give you a better estimate once we understand your space — Elite Cleaners will confirm this with you." },
-  { q: "Does Elite Standard include laundry and ironing?", a: "Yes. Elite Standard includes one load of laundry and ironing, sized according to your package — see the \"What's Included\" panel for details." },
+  { q: "Does Elite Home Clean include laundry and ironing?", a: "Yes. Elite Home Clean includes one load of laundry and ironing, sized according to your package — see the detailed inclusion panel for the weight limit." },
   { q: "How do laundry collection and delivery services work?", a: "Choose the \"Collection, Wash, Dry & Iron + Return\" option when booking Elite Laundry. We'll collect your laundry, wash, dry, fold or iron it, and deliver it back to you." },
   { q: "How long does laundry take?", a: "Standard turnaround for Elite Laundry is 24 to 48 hours." },
   { q: "What areas do you service?", a: "We're based in Johannesburg. Send us your suburb when booking and we'll confirm whether we service your area." },
@@ -193,7 +193,7 @@ const FAQS = [
   /* ---------- calm section reveals ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
-    "main > section:not(.hero), .section-head, .service-card, .price-card, .promise-list li, .care-photo, .about-copy, .team-member, .laundry-panel, .corp-once-off, .corp-photo, .corp-quote-panel, .why-item, .how-steps li, .faq-item"
+    "main > section:not(.hero), .section-head, .service-card, .service-choice, .included-comparison, .price-card, .promise-list li, .care-photo, .about-copy, .team-member, .laundry-panel, .corp-once-off, .corp-photo, .corp-quote-panel, .why-item, .how-steps li, .faq-item"
   );
   revealTargets.forEach(function (target, index) {
     target.classList.add("scroll-reveal");
@@ -234,8 +234,8 @@ const FAQS = [
         '<p class="price-card-price">' + pkg.price + '</p>' +
         '<p class="price-card-desc">' + pkg.desc + '</p>' +
         '<div class="price-card-actions">' +
-          '<button class="btn btn-outline btn-block" data-included="' + pkg.id + '">View What\'s Included</button>' +
-          '<button class="btn btn-primary btn-block" data-select="' + pkg.id + '">Select Package</button>' +
+          '<button class="btn btn-outline btn-block" data-included="' + pkg.id + '">Detailed Inclusions</button>' +
+          '<button class="btn btn-primary btn-block" data-select="' + pkg.id + '">Book This Clean</button>' +
         '</div>';
       pricingGrid.appendChild(card);
     });
@@ -253,6 +253,12 @@ const FAQS = [
 
   toggleStandard.addEventListener("click", function () { setMode("standard"); });
   toggleQuick.addEventListener("click", function () { setMode("quick"); });
+  document.querySelectorAll("[data-package-mode]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      setMode(button.getAttribute("data-package-mode"));
+      document.getElementById("packages").scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
 
   function findPackage(id) {
     return PACKAGES.standard.concat(PACKAGES.quick).find(function (p) { return p.id === id; });
@@ -271,7 +277,7 @@ const FAQS = [
     if (!pkg) return;
     includedModalPkgId = pkgId;
     const isStandard = pkgId.indexOf("std-") === 0;
-    includedModalEyebrow.textContent = isStandard ? "What's Included — Elite Standard" : "What's Included — Elite Quick";
+    includedModalEyebrow.textContent = isStandard ? "What's Included — Elite Home Clean" : "What's Included — Elite Quick Clean";
     includedModalTitle.textContent = pkg.name + " — " + pkg.beds;
 
     let html = "";
@@ -318,12 +324,25 @@ const FAQS = [
   const laundrySizeChips = document.getElementById("laundrySizeChips");
   const laundryPriceEl = document.getElementById("laundryPrice");
   const laundryIncludedList = document.getElementById("laundryIncludedList");
+  const laundrySelection = document.getElementById("laundrySelection");
 
   function renderLaundry() {
     const price = LAUNDRY_PRICING[laundryService][laundrySize];
     laundryPriceEl.textContent = "R" + price;
-    laundryIncludedList.innerHTML = LAUNDRY_INCLUDED[laundryService].map(function (i) {
-      return "<li>" + i + "</li>";
+    document.querySelectorAll("[data-load-price]").forEach(function (el) {
+      el.textContent = "R" + LAUNDRY_PRICING[laundryService][el.getAttribute("data-load-price")];
+    });
+    const sizeLabel = LAUNDRY_LABELS.size[laundrySize].replace("up to", "maximum");
+    laundrySelection.textContent = sizeLabel + (laundryService === "collect" ? " · collection & return" : " · on-site");
+    const facts = [
+      ["Washing", "Included"],
+      ["Drying", "Included"],
+      ["Folding or ironing", "Included"],
+      ["Detergent supplied", "Please confirm when booking"],
+      ["Collection & delivery", laundryService === "collect" ? "Included" : "Not included — service is on-site"]
+    ];
+    laundryIncludedList.innerHTML = facts.map(function (fact) {
+      return "<div><dt>" + fact[0] + "</dt><dd>" + fact[1] + "</dd></div>";
     }).join("");
   }
   laundryServiceChips.addEventListener("click", function (e) {
@@ -540,9 +559,9 @@ const FAQS = [
   function renderStep2() {
     let html = "";
     if (booking.service === "Home Cleaning") {
-      html += '<div class="field-group"><span class="field-label">Standard or Quick</span><div class="chip-row" id="bkTypeChips">' +
-        '<button class="chip" data-type="standard">Standard</button>' +
-        '<button class="chip" data-type="quick">Quick</button>' +
+      html += '<div class="field-group"><span class="field-label">Choose your cleaning service</span><div class="chip-row" id="bkTypeChips">' +
+        '<button class="chip" data-type="standard">Elite Home Clean</button>' +
+        '<button class="chip" data-type="quick">Elite Quick Clean</button>' +
         '</div></div>' +
         '<div class="field-group"><span class="field-label">Package</span><div class="option-grid option-grid-compact" id="bkPackageOptions"></div></div>';
       step2Content.innerHTML = html;
@@ -679,8 +698,8 @@ const FAQS = [
     const lines = [];
     if (booking.service === "Home Cleaning" && booking.packageId) {
       const pkg = findPackage(booking.packageId);
-      lines.push({ label: "Service", value: (pkg.id.indexOf("qk-") === 0 ? "Elite Quick" : "Elite Standard") + " Home Cleaning" });
-      lines.push({ label: "Package", value: pkg.name + " (" + pkg.beds + ")" });
+      lines.push({ label: "Service", value: pkg.id.indexOf("qk-") === 0 ? "Elite Quick Clean" : "Elite Home Clean" });
+      lines.push({ label: "Home size", value: pkg.beds });
       lines.push({ label: "Price", value: pkg.price });
     } else if (booking.service === "Laundry") {
       const svc = booking.laundryService || "wash";
@@ -718,8 +737,8 @@ const FAQS = [
 
     if (booking.service === "Home Cleaning" && booking.packageId) {
       const pkg = findPackage(booking.packageId);
-      const type = pkg.id.indexOf("qk-") === 0 ? "Elite Quick" : "Elite Standard";
-      serviceLine = "I would like to book the " + pkg.name + " package (" + type + ") for a " + pkg.beds + " home.";
+      const type = pkg.id.indexOf("qk-") === 0 ? "Elite Quick Clean" : "Elite Home Clean";
+      serviceLine = "I would like to book " + type + " for a " + pkg.beds + " home.";
       if (pkg.priceValue === null) serviceLine += " I understand this requires a custom quote.";
       subject = "Elite Cleaners Booking Request | " + pkg.name;
     } else if (booking.service === "Laundry") {
