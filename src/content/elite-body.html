@@ -34,9 +34,9 @@
   <section class="hero" id="home">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Home cleaning &amp; laundry, Johannesburg</p>
+        <p class="eyebrow">Home and Laundry care, Waterfall, Sunninghill, Sandton, Bryanston, Fourways, Kyalami, Midrand</p>
         <h1>We care for your <em>home</em> like it’s ours.</h1>
-        <p class="hero-lead">Professional home cleaning and laundry care that gives you back time, calm and a space that feels beautifully looked after — with clear package pricing and products and equipment supplied where stated.</p>
+        <p class="hero-lead"><strong>More than clean. Absolute peace of mind.</strong> Reliable, professionally trained cleaners for homes across Johannesburg. Enjoy a properly cared for home, without the hassle of managing the cleaning yourself. Don’t worry about counting hours — our trained cleaners leave only when the work is done.</p>
         <div class="hero-ctas">
           <button class="btn btn-primary btn-lg" id="heroBookBtn" type="button">Book Your Clean</button>
           <a class="btn btn-outline btn-lg" href="#packages">View Packages</a>
@@ -62,13 +62,7 @@
           <img src="/hero-home.jpg" alt="Bright, immaculate open-plan living and dining area in a modern two-bedroom home" width="1024" height="1280" class="hv-photo" fetchpriority="high">
         </div>
         <div class="hv-panel hv-panel-b"></div>
-        <div class="hv-card">
-          <span class="hv-card-label">Elite Home Clean</span>
-          <span class="hv-card-price">R600</span>
-          <span class="hv-card-meta">2 bedroom home · Standard</span>
-        </div>
         <div class="hv-lines"></div>
-        <img src="/__l5e/assets-v1/5a4ccc2f-c251-4c6d-879b-44e4ad110b53/img_cd071c0e.png" alt="" class="hv-monogram" width="84" height="84" aria-hidden="true">
       </div>
     </div>
   </section>
@@ -78,7 +72,7 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">What we do</p>
-        <h2>Four services. One standard of care.</h2>
+        <h2>Home and laundry care, with more to come.</h2>
       </div>
       <div class="service-grid">
         <a href="#home-cleaning" class="service-card">
@@ -88,19 +82,19 @@
         </a>
         <a href="#laundry" class="service-card">
           <h3>Elite Laundry</h3>
-          <p>Wash, dry and iron — in your home, or collected and returned to your door.</p>
+          <p>Wash, dry, iron, fold and hang — all done on-site in your home.</p>
           <span class="service-link">See laundry pricing</span>
         </a>
-        <a href="#deep-cleaning" class="service-card">
+        <div class="service-card service-card-soon">
           <h3>Deep Cleaning</h3>
-          <p>Specialist carpet, upholstery and intensive cleaning — coming soon.</p>
-          <span class="service-link">Register interest</span>
-        </a>
-        <a href="#corporate" class="service-card">
+          <p>Specialist carpet, upholstery and intensive cleaning.</p>
+          <span class="service-coming-soon">Coming soon</span>
+        </div>
+        <div class="service-card service-card-soon">
           <h3>Corporate Cleaning</h3>
           <p>Once-off and ongoing cleaning for offices and commercial spaces.</p>
-          <span class="service-link">Request a quote</span>
-        </a>
+          <span class="service-coming-soon">Coming soon</span>
+        </div>
       </div>
     </div>
   </section>
@@ -171,6 +165,48 @@
       <p class="pricing-footnote">All packages include cleaning products and equipment. Homes with more than four bedrooms require a custom quote.</p>
       <div class="section-booking-action section-booking-action-left">
         <button class="btn btn-primary" id="pricingBookBtn" type="button">Book Your Clean</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LAUNDRY ============ -->
+  <section class="section laundry-section" id="laundry">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Elite Laundry</p>
+        <h2>Let us take laundry off your to-do list.</h2>
+        <p class="section-lead">Choose your load size. Everything is washed, dried, ironed, folded and hung on-site in your home. Your price and inclusions are shown before you book.</p>
+      </div>
+
+      <div class="laundry-panel">
+        <div class="laundry-selector">
+          <div class="field-group">
+            <span class="field-label">2. Choose your load size</span>
+            <div class="laundry-load-list" id="laundrySizeChips">
+              <button class="laundry-load-option chip is-active" type="button" data-size="small" aria-pressed="true"><span><strong>Small</strong><small>Maximum 5kg</small></span><b data-load-price="small">R280</b></button>
+              <button class="laundry-load-option chip" type="button" data-size="medium" aria-pressed="false"><span><strong>Medium</strong><small>Maximum 8kg</small></span><b data-load-price="medium">R380</b></button>
+              <button class="laundry-load-option chip" type="button" data-size="large" aria-pressed="false"><span><strong>Large</strong><small>Maximum 12kg</small></span><b data-load-price="large">R520</b></button>
+            </div>
+          </div>
+          <div class="laundry-included" aria-live="polite">
+            <span class="field-label">What your selected service includes</span>
+            <dl id="laundryIncludedList" class="laundry-facts">
+              <div><dt>Washing</dt><dd>Included</dd></div>
+              <div><dt>Drying</dt><dd>Included</dd></div>
+              <div><dt>Ironing</dt><dd>Included</dd></div>
+              <div><dt>Folding</dt><dd>Included</dd></div>
+              <div><dt>Hanging</dt><dd>Included</dd></div>
+              <div><dt>Service location</dt><dd>On-site</dd></div>
+            </dl>
+          </div>
+        </div>
+        <div class="laundry-price-card">
+          <span class="lpc-label">Your selected package price</span>
+          <span class="lpc-price" id="laundryPrice">R280</span>
+          <span class="lpc-selection" id="laundrySelection">Small · maximum 5kg · on-site</span>
+          <span class="lpc-turnaround">Standard turnaround: 24–48 hours</span>
+          <button class="btn btn-primary btn-block" id="laundryBookBtn" type="button">Choose This Service</button>
+        </div>
       </div>
     </div>
   </section>
@@ -319,48 +355,6 @@
     </div>
   </section>
 
-  <!-- ============ LAUNDRY ============ -->
-  <section class="section laundry-section" id="laundry">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Elite Laundry</p>
-        <h2>Let us take laundry off your to-do list.</h2>
-        <p class="section-lead">Choose your load size and whether you’d like on-site service or collection and return. Your price and inclusions are shown before you book.</p>
-      </div>
-
-      <div class="laundry-panel">
-        <div class="laundry-selector">
-          <div class="field-group">
-            <span class="field-label">1. Choose how we help</span>
-            <div class="chip-row" id="laundryServiceChips">
-              <button class="chip is-active" type="button" data-service="wash" aria-pressed="true">On-site service</button>
-              <button class="chip" type="button" data-service="collect" aria-pressed="false">Collection &amp; return</button>
-            </div>
-          </div>
-          <div class="field-group">
-            <span class="field-label">2. Choose your load size</span>
-            <div class="laundry-load-list" id="laundrySizeChips">
-              <button class="laundry-load-option chip is-active" type="button" data-size="small" aria-pressed="true"><span><strong>Small</strong><small>Maximum 5kg</small></span><b data-load-price="small">R280</b></button>
-              <button class="laundry-load-option chip" type="button" data-size="medium" aria-pressed="false"><span><strong>Medium</strong><small>Maximum 8kg</small></span><b data-load-price="medium">R380</b></button>
-              <button class="laundry-load-option chip" type="button" data-size="large" aria-pressed="false"><span><strong>Large</strong><small>Maximum 12kg</small></span><b data-load-price="large">R520</b></button>
-            </div>
-          </div>
-          <div class="laundry-included" aria-live="polite">
-            <span class="field-label">What your selected service includes</span>
-            <dl id="laundryIncludedList" class="laundry-facts"></dl>
-          </div>
-        </div>
-        <div class="laundry-price-card">
-          <span class="lpc-label">Your selected package price</span>
-          <span class="lpc-price" id="laundryPrice">R280</span>
-          <span class="lpc-selection" id="laundrySelection">Small · maximum 5kg · on-site</span>
-          <span class="lpc-turnaround">Standard turnaround: 24–48 hours</span>
-          <button class="btn btn-primary btn-block" id="laundryBookBtn" type="button">Choose This Service</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ DEEP CLEANING ============ -->
   <section class="section deep-clean-section" id="deep-cleaning">
     <div class="wrap deep-clean-grid">
@@ -374,100 +368,6 @@
           <span>Upholstery</span>
           <span>Intensive home cleaning</span>
         </div>
-        <div class="hero-ctas">
-          <button class="btn btn-outline-light" id="deepCleanInterestBtn" type="button">Register Interest</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CORPORATE ============ -->
-  <section class="section corporate-section bg-wash" id="corporate">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Corporate &amp; commercial</p>
-        <h2>A cleaner workplace. A better impression.</h2>
-      </div>
-
-      <div class="corp-showcase">
-        <div class="corp-once-off">
-          <h3>Once-Off Corporate Cleaning</h3>
-          <p class="section-lead">Perfect for office refreshes, inspections, important meetings, events, or businesses that don't need a recurring cleaning contract.</p>
-          <div class="corp-price-table">
-            <div class="corp-price-row"><span>Up to 50 m²</span><strong>From R750</strong></div>
-            <div class="corp-price-row"><span>51–100 m²</span><strong>From R1,050</strong></div>
-            <div class="corp-price-row"><span>101–250 m²</span><strong>From R1,850</strong></div>
-            <div class="corp-price-row"><span>251–500 m²</span><strong>From R3,250</strong></div>
-            <div class="corp-price-row"><span>Over 500 m²</span><strong>Custom Quote</strong></div>
-          </div>
-          <p class="fine-print">All corporate prices displayed are starting prices.</p>
-        </div>
-        <figure class="corp-photo">
-          <img src="__CLEAN_OFFICE__" alt="Bright, immaculate contemporary office ready for the working day" width="1536" height="1024" loading="lazy">
-          <figcaption>Professional spaces, ready to make an impression</figcaption>
-        </figure>
-      </div>
-
-      <div class="corp-quote-panel" id="corp-quote">
-        <div class="corp-quote-intro">
-          <h3>Request a Corporate Quote</h3>
-          <p>Tell us about your workplace and we'll create a cleaning solution specifically for your business.</p>
-        </div>
-        <form class="corp-form" id="corpForm" novalidate>
-          <div class="form-grid">
-            <label class="field">
-              <span>Company name</span>
-              <input type="text" name="companyName" required>
-            </label>
-            <label class="field">
-              <span>Contact person</span>
-              <input type="text" name="contactPerson" required>
-            </label>
-            <label class="field">
-              <span>Phone number</span>
-              <input type="tel" name="phone" required>
-            </label>
-            <label class="field">
-              <span>Email address</span>
-              <input type="email" name="email" required>
-            </label>
-            <label class="field field-wide">
-              <span>Business address</span>
-              <input type="text" name="address" required>
-            </label>
-            <label class="field">
-              <span>Approximate floor size</span>
-              <input type="text" name="floorSize" placeholder="e.g. 180 m²">
-            </label>
-            <label class="field">
-              <span>Number of employees</span>
-              <input type="text" name="employees">
-            </label>
-            <label class="field">
-              <span>Preferred cleaning frequency</span>
-              <select name="frequency">
-                <option value="Once-off">Once-off</option>
-                <option value="Daily">Daily</option>
-                <option value="Weekly">Weekly</option>
-                <option value="Fortnightly">Fortnightly</option>
-                <option value="Monthly">Monthly</option>
-              </select>
-            </label>
-            <label class="field">
-              <span>Preferred cleaning times</span>
-              <input type="text" name="times" placeholder="e.g. weekday evenings">
-            </label>
-            <label class="field field-wide">
-              <span>Additional requirements</span>
-              <textarea name="notes" rows="3"></textarea>
-            </label>
-          </div>
-          <p class="fine-print">All prices displayed are starting prices and are subject to the size, condition, location and requirements of the premises. Final pricing will be confirmed following assessment of the required scope of work. Prices exclude VAT where applicable.</p>
-          <div class="corp-form-ctas">
-            <button type="button" class="btn btn-primary" id="corpQuoteWhatsapp">Request Quote via WhatsApp</button>
-            <button type="button" class="btn btn-outline" id="corpQuoteEmail">Request Quote via Email</button>
-          </div>
-        </form>
       </div>
     </div>
   </section>
@@ -621,8 +521,6 @@
       <div class="option-grid">
         <button class="option-card" data-service="Home Cleaning">Home Cleaning</button>
         <button class="option-card" data-service="Laundry">Laundry</button>
-        <button class="option-card" data-service="Corporate Cleaning">Corporate Cleaning</button>
-        <button class="option-card" data-service="Deep Cleaning">Deep Cleaning</button>
       </div>
     </div>
 
