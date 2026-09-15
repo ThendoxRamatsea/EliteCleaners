@@ -5,6 +5,10 @@ import "../styles/elite.css";
 import bodyHtml from "../content/elite-body.html?raw";
 import pageScript from "../content/elite-script.js?raw";
 import ldJson from "../content/elite-ld.json?raw";
+import cleanKitchen from "../assets/clean-kitchen.jpg";
+import bedroomCare from "../assets/bedroom-care.jpg";
+import cleanBathroom from "../assets/clean-bathroom.jpg";
+import cleanOffice from "../assets/clean-office.jpg";
 
 
 export const Route = createFileRoute("/")({
@@ -56,5 +60,11 @@ function Index() {
     }
   }, []);
 
-  return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
+  const hydratedBodyHtml = bodyHtml
+    .replaceAll("__CLEAN_KITCHEN__", cleanKitchen)
+    .replaceAll("__BEDROOM_CARE__", bedroomCare)
+    .replaceAll("__CLEAN_BATHROOM__", cleanBathroom)
+    .replaceAll("__CLEAN_OFFICE__", cleanOffice);
+
+  return <div dangerouslySetInnerHTML={{ __html: hydratedBodyHtml }} />;
 }

@@ -193,7 +193,7 @@ const FAQS = [
   /* ---------- calm section reveals ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
-    "main > section:not(.hero), .section-head, .service-card, .price-card, .promise-list li, .about-copy, .team-member, .laundry-panel, .corp-once-off, .corp-quote-panel, .why-item, .how-steps li, .faq-item"
+    "main > section:not(.hero), .section-head, .service-card, .price-card, .promise-list li, .care-photo, .about-copy, .team-member, .laundry-panel, .corp-once-off, .corp-photo, .corp-quote-panel, .why-item, .how-steps li, .faq-item"
   );
   revealTargets.forEach(function (target, index) {
     target.classList.add("scroll-reveal");
