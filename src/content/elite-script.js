@@ -458,7 +458,7 @@ const FAQS = [
   const hoursNote = document.getElementById("hoursNote");
 
   const booking = {
-    service: null,       // "Home Cleaning" | "Laundry" | "Corporate Cleaning" | "Deep Cleaning"
+    service: null,       // "Home Cleaning" | "Laundry"
     packageId: null,      // for home cleaning
     laundryService: null,
     laundrySize: null,
@@ -722,9 +722,6 @@ const FAQS = [
       const size = booking.laundrySize || "small";
       serviceLine = "I would like to book Elite Laundry — on-site " + LAUNDRY_LABELS.size[size] + ".";
       subject = "Elite Laundry Booking Request | " + LAUNDRY_LABELS.size[size].split(" ")[0] + " Load";
-    } else if (booking.service === "Deep Cleaning") {
-      serviceLine = "I'd like to register my interest in Elite Cleaners' upcoming Deep Cleaning services.";
-      subject = "Deep Cleaning — Register Interest";
     } else {
       serviceLine = "I would like to make an enquiry about " + (booking.service || "your services") + ".";
     }
