@@ -382,13 +382,6 @@ const FAQS = [
   /* ============================================================
      DEEP CLEANING interest
      ============================================================ */
-  const deepCleanInterestBtn = document.getElementById("deepCleanInterestBtn");
-  if (deepCleanInterestBtn) {
-    deepCleanInterestBtn.addEventListener("click", function () {
-      const msg = "Hi Elite Cleaners,\n\nI'd like to register my interest in your upcoming Deep Cleaning services.\n\nName:\nLocation:\nService I'm interested in (e.g. carpets, couches, upholstery):\n\nPlease let me know when this becomes available.\n\nThank you.";
-      window.open(waLink(msg), "_blank", "noopener");
-    });
-  }
 
 
   /* ============================================================
