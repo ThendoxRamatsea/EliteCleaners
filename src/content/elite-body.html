@@ -20,7 +20,7 @@
 
     <div class="header-actions">
       <a class="btn btn-ghost hide-mobile" id="whatsappNavBtn" href="#" target="_blank" rel="noopener">WhatsApp Us</a>
-      <button class="btn btn-primary" id="bookNowNavBtn" type="button">Book Now</button>
+      <button class="btn btn-primary" id="bookNowNavBtn" type="button">Book Your Clean</button>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -38,7 +38,7 @@
         <h1>We care for your <em>home</em> like it’s ours.</h1>
         <p class="hero-lead">Thoughtful home and workplace cleaning that gives you back time, calm and a space that feels beautifully cared for — with simple pricing and no hidden charges.</p>
         <div class="hero-ctas">
-          <button class="btn btn-primary btn-lg" id="heroBookBtn" type="button">Book a Cleaning</button>
+          <button class="btn btn-primary btn-lg" id="heroBookBtn" type="button">Book Your Clean</button>
           <a class="btn btn-outline btn-lg" href="#packages">View Packages</a>
         </div>
         <div class="hero-trust">
@@ -105,6 +105,9 @@
           <p>Once-off and ongoing cleaning for offices and commercial spaces.</p>
           <span class="service-link">Request a quote</span>
         </a>
+      </div>
+      <div class="section-booking-action">
+        <button class="btn btn-primary" id="servicesBookBtn" type="button">Book Your Clean</button>
       </div>
     </div>
   </section>
@@ -173,6 +176,38 @@
       <div class="pricing-grid" id="pricingGrid"></div>
 
       <p class="pricing-footnote">All packages include cleaning products and equipment. Homes with more than four bedrooms require a custom quote.</p>
+      <div class="section-booking-action section-booking-action-left">
+        <button class="btn btn-primary" id="pricingBookBtn" type="button">Book Your Clean</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RECURRING HOME CLEANING ============ -->
+  <section class="section recurring-section bg-wash" aria-labelledby="recurring-title">
+    <div class="wrap recurring-grid">
+      <div class="recurring-intro">
+        <p class="eyebrow">Recurring home cleaning</p>
+        <h2 id="recurring-title">Your home, consistently cared for.</h2>
+        <p>Maintain a regular cleaning schedule that suits your home and routine. Choose your preferred frequency when you book; no recurring discount is assumed.</p>
+        <button class="btn btn-primary" id="recurringBookBtn" type="button">Book Your Clean</button>
+      </div>
+      <div class="recurring-options" aria-label="Available cleaning frequencies">
+        <article class="recurring-option">
+          <p class="recurring-number">01</p>
+          <h3>Weekly</h3>
+          <p>Best for customers who want their home consistently maintained.</p>
+        </article>
+        <article class="recurring-option">
+          <p class="recurring-number">02</p>
+          <h3>Fortnightly</h3>
+          <p>Ideal for homes needing regular upkeep.</p>
+        </article>
+        <article class="recurring-option">
+          <p class="recurring-number">03</p>
+          <h3>Once-Off</h3>
+          <p>Perfect for trying Elite or booking when needed.</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -444,21 +479,44 @@
     </div>
   </section>
 
-  <!-- ============ WHY ELITE CLEANERS ============ -->
-  <section class="section why-section bg-wash" id="why">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Why Elite Cleaners</p>
-        <h2>Reasons our clients keep booking us back</h2>
+  <!-- ============ THE ELITE STANDARD ============ -->
+  <section class="section standard-section bg-wash" id="why" aria-labelledby="elite-standard-title">
+    <div class="wrap standard-layout">
+      <div class="standard-intro">
+        <p class="eyebrow">The Elite Standard</p>
+        <h2 id="elite-standard-title">One professional standard, in every home.</h2>
+        <p>Every Elite cleaner is expected to work with care, consistency and respect for the space entrusted to us.</p>
       </div>
-      <div class="why-grid">
-        <div class="why-item"><h3>Professional Cleaners</h3><p>Carefully selected and trained according to the Elite Cleaners standard.</p></div>
-        <div class="why-item"><h3>Upfront Pricing</h3><p>Simple package-based pricing, with no hourly surprises.</p></div>
-        <div class="why-item"><h3>Products &amp; Equipment Included</h3><p>No unexpected product or equipment charges.</p></div>
-        <div class="why-item"><h3>Attention to Detail</h3><p>Thorough cleaning, performed with care.</p></div>
-        <div class="why-item"><h3>Respect for Your Space</h3><p>Professional conduct and care for the spaces entrusted to us.</p></div>
-        <div class="why-item"><h3>Peace of Mind</h3><p>A dependable service designed to take cleaning off your list of things to worry about.</p></div>
+      <div class="standard-list" role="list">
+        <div class="standard-item" role="listitem"><h3>Professionally trained</h3><p>Every team member completes professional training with Ace of Maids.</p></div>
+        <div class="standard-item" role="listitem"><h3>Carefully selected</h3><p>Our cleaners are selected for care, reliability and attention to detail.</p></div>
+        <div class="standard-item" role="listitem"><h3>Consistent cleaning standards</h3><p>Each service follows the clearly defined Elite cleaning scope.</p></div>
+        <div class="standard-item" role="listitem"><h3>Respect for your space</h3><p>Professional conduct and thoughtful care guide every visit.</p></div>
+        <div class="standard-item" role="listitem"><h3>Products and equipment supplied</h3><p>We bring the cleaning products, equipment and tools included in your package.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="section reviews-section" aria-labelledby="reviews-title">
+    <div class="wrap reviews-layout">
+      <div>
+        <p class="eyebrow">Client reviews</p>
+        <h2 id="reviews-title">Trust is earned, one clean at a time.</h2>
+      </div>
+      <div class="reviews-awaiting" role="status">
+        <p>Verified client reviews will be shared here as they become available.</p>
+        <span>Real feedback only — never invented testimonials.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toggle with ENABLE_ELITE_CLEAN_GUARANTEE in elite-script.js once the policy is confirmed. -->
+  <section class="section guarantee-section" id="eliteGuarantee" aria-labelledby="guarantee-title" hidden>
+    <div class="wrap guarantee-inner">
+      <p class="eyebrow eyebrow-light">Proposed policy</p>
+      <h2 id="guarantee-title">The Elite Clean Guarantee</h2>
+      <p>If something we've agreed to clean has been missed, let us know within 24 hours and we'll make it right.</p>
     </div>
   </section>
 
@@ -466,15 +524,13 @@
   <section class="section how-section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">How booking works</p>
-        <h2>Five steps to a confirmed clean</h2>
+        <p class="eyebrow">How it works</p>
+        <h2>Effortless from booking to clean.</h2>
       </div>
       <ol class="how-steps">
-        <li><span class="how-num">1</span><div><h3>Choose a service</h3><p>Home cleaning, laundry, corporate or deep cleaning.</p></div></li>
-        <li><span class="how-num">2</span><div><h3>Choose your package</h3><p>Select bedrooms, load size or office size — whatever applies.</p></div></li>
-        <li><span class="how-num">3</span><div><h3>Add your details</h3><p>Name, contact details, address and preferred date and time.</p></div></li>
-        <li><span class="how-num">4</span><div><h3>Review your summary</h3><p>See your selected service and price before you send anything.</p></div></li>
-        <li><span class="how-num">5</span><div><h3>Send your request</h3><p>Via WhatsApp or email — we'll confirm availability.</p></div></li>
+        <li><span class="how-num">1</span><div><h3>Choose your clean</h3><p>Select the service and package that suits your home.</p></div></li>
+        <li><span class="how-num">2</span><div><h3>Pick your date</h3><p>Tell us when and where you would like us to help.</p></div></li>
+        <li><span class="how-num">3</span><div><h3>We take care of the rest</h3><p>Send your request and we’ll confirm availability with you.</p></div></li>
       </ol>
     </div>
   </section>
@@ -491,14 +547,14 @@
   </section>
 
   <!-- ============ FINAL CTA ============ -->
-  <section class="section final-cta">
+  <section class="final-cta">
+    <img class="final-cta-photo" src="/__l5e/assets-v1/707e174d-5287-43fb-a58b-039e37e12fc7/about-room.png" alt="Beautifully clean living room ready to come home to" width="1280" height="853" loading="lazy">
+    <div class="final-cta-shade" aria-hidden="true"></div>
     <div class="wrap final-cta-inner">
-      <h2>Ready for peace of mind?</h2>
-      <p>Choose a package, tell us a little about your space, and send your booking request in under two minutes.</p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary btn-lg" id="finalCtaBookBtn" type="button">Book a Cleaning</button>
-        <a class="btn btn-outline-light btn-lg" id="finalCtaWhatsapp" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
-      </div>
+      <p class="eyebrow eyebrow-light">A beautifully cared-for home</p>
+      <h2>Come home to clean.</h2>
+      <p>Choose the clean that suits your home, and let us take care of the rest.</p>
+      <button class="btn btn-primary btn-lg" id="finalCtaBookBtn" type="button">Book Your Clean</button>
     </div>
   </section>
 
@@ -525,7 +581,7 @@
       <a href="#about">About</a>
       <a href="#faqs">FAQs</a>
       <a href="#contact">Contact</a>
-      <button type="button" class="footer-link-btn" id="footerBookBtn">Book Now</button>
+      <button type="button" class="footer-link-btn" id="footerBookBtn">Book Your Clean</button>
     </div>
 
     <div class="footer-col">
@@ -563,7 +619,7 @@
 
 <!-- ============ MOBILE STICKY CTA ============ -->
 <div class="mobile-sticky-cta" id="mobileStickyCta">
-  <button class="btn btn-primary btn-block" id="mobileStickyBookBtn" type="button">Book Now</button>
+  <button class="btn btn-primary btn-block" id="mobileStickyBookBtn" type="button">Book Your Clean</button>
 </div>
 
 <!-- ============ WHAT'S INCLUDED MODAL ============ -->
