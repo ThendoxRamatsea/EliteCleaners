@@ -114,43 +114,65 @@
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Home cleaning</p>
-        <h2>Two ways to book Elite Home Cleaning</h2>
-        <p class="section-lead">Elite Standard is our full-service clean, including laundry and ironing. Elite Quick is a professional home clean without laundry — built for a faster visit.</p>
+        <h2>Choose the clean that fits your home.</h2>
+        <p class="section-lead">Both services care for every main room. Choose the complete service with laundry and premium extras, or a streamlined refresh for regular upkeep.</p>
       </div>
 
-      <div class="compare-strip">
-        <div class="compare-col">
-          <h3>Elite Standard</h3>
-          <p>The comprehensive clean. Every room, plus a load of laundry and ironing included in the visit.</p>
-          <ul class="compare-list">
-            <li>Full room-by-room cleaning</li>
-            <li>Laundry &amp; ironing included</li>
-            <li>Interior appliance cleaning</li>
-          </ul>
-        </div>
-        <div class="compare-divider" aria-hidden="true"><span>vs</span></div>
-        <div class="compare-col">
-          <h3>Elite Quick</h3>
-          <p>A professional, efficient clean of every room — without laundry, ironing or deep appliance interiors.</p>
-          <ul class="compare-list">
-            <li>Full room-by-room cleaning</li>
-            <li>No laundry or ironing</li>
-            <li>Faster visit, lighter scope</li>
-          </ul>
-        </div>
+      <div class="service-choice-intro">
+        <article class="service-choice service-choice-featured">
+          <p class="service-choice-kicker">Complete service</p>
+          <h3>Elite Home Clean</h3>
+          <p>Our complete home cleaning service, with laundry, ironing and selected appliance interiors included.</p>
+          <button class="btn btn-primary" type="button" data-package-mode="standard">View Home Clean prices</button>
+        </article>
+        <article class="service-choice">
+          <p class="service-choice-kicker">Maintenance refresh</p>
+          <h3>Elite Quick Clean</h3>
+          <p>A streamlined clean for homes that need a refresh, without laundry, ironing or premium extras.</p>
+          <button class="btn btn-outline" type="button" data-package-mode="quick">View Quick Clean prices</button>
+        </article>
       </div>
 
+      <div class="included-comparison" aria-labelledby="home-included-title">
+        <div class="included-comparison-head">
+          <div>
+            <p class="eyebrow">What’s included</p>
+            <h3 id="home-included-title">Know exactly what you’re booking.</h3>
+          </div>
+          <p>Every clean covers your essential living spaces. Elite Home Clean adds the time-saving extras.</p>
+        </div>
+        <div class="comparison-key" aria-hidden="true">
+          <span></span><strong>Elite Home Clean</strong><strong>Elite Quick Clean</strong>
+        </div>
+        <div class="comparison-list" role="list" aria-label="Home cleaning service comparison">
+          <div class="comparison-row" role="listitem"><span>Bedrooms</span><strong><span class="check">✓</span><small>Complete clean</small></strong><strong><span class="check">✓</span><small>Refresh clean</small></strong></div>
+          <div class="comparison-row" role="listitem"><span>Bathrooms</span><strong><span class="check">✓</span><small>Complete clean</small></strong><strong><span class="check">✓</span><small>Refresh clean</small></strong></div>
+          <div class="comparison-row" role="listitem"><span>Kitchen &amp; living areas</span><strong><span class="check">✓</span><small>Complete clean</small></strong><strong><span class="check">✓</span><small>Refresh clean</small></strong></div>
+          <div class="comparison-row" role="listitem"><span>Dusting, vacuuming &amp; mopping</span><strong><span class="check">✓</span><small>Included</small></strong><strong><span class="check">✓</span><small>Included</small></strong></div>
+          <div class="comparison-row" role="listitem"><span>Bins emptied</span><strong><span class="check">✓</span><small>Included</small></strong><strong><span class="check">✓</span><small>Included</small></strong></div>
+          <div class="comparison-row" role="listitem"><span>Cleaning products &amp; equipment</span><strong><span class="check">✓</span><small>Supplied</small></strong><strong><span class="check">✓</span><small>Supplied</small></strong></div>
+          <div class="comparison-row comparison-row-premium" role="listitem"><span>Laundry &amp; ironing</span><strong><span class="check">✓</span><small>Included</small></strong><strong><span class="dash">—</span><small>Not included</small></strong></div>
+          <div class="comparison-row comparison-row-premium" role="listitem"><span>Selected appliance interiors</span><strong><span class="check">✓</span><small>Included</small></strong><strong><span class="dash">—</span><small>Exterior clean only*</small></strong></div>
+        </div>
+        <p class="comparison-note">*Elite Quick Clean includes the inside of the microwave; the fridge, oven and dishwasher are cleaned externally.</p>
+      </div>
+
+      <div class="package-pricing-intro">
+        <p class="eyebrow">Package pricing</p>
+        <h3>One clear price. No hourly calculations.</h3>
+        <p>Your package price is based on your home and selected service, so you know what you’re paying before we arrive.</p>
+      </div>
       <div class="toggle-row" id="packages">
         <div class="pkg-toggle" role="tablist" aria-label="Choose package type">
-          <button class="pkg-toggle-btn is-active" id="toggleStandard" role="tab" aria-selected="true" data-mode="standard">Standard</button>
-          <button class="pkg-toggle-btn" id="toggleQuick" role="tab" aria-selected="false" data-mode="quick">Quick</button>
+          <button class="pkg-toggle-btn is-active" id="toggleStandard" role="tab" aria-selected="true" data-mode="standard">Elite Home Clean</button>
+          <button class="pkg-toggle-btn" id="toggleQuick" role="tab" aria-selected="false" data-mode="quick">Elite Quick Clean</button>
           <span class="pkg-toggle-thumb" id="pkgToggleThumb" aria-hidden="true"></span>
         </div>
       </div>
 
       <div class="pricing-grid" id="pricingGrid"></div>
 
-      <p class="pricing-footnote">All Elite Standard and Elite Quick packages include cleaning products and equipment. Elite Estate and Elite Quick Estate homes (4+ bedrooms) require a custom quote.</p>
+      <p class="pricing-footnote">All packages include cleaning products and equipment. Homes with more than four bedrooms require a custom quote.</p>
     </div>
   </section>
 
@@ -159,8 +181,8 @@
     <div class="wrap pricing-promise-grid">
       <div>
         <p class="eyebrow eyebrow-light">Pricing philosophy</p>
-        <h2>Simple pricing. No surprises.</h2>
-        <p class="pricing-promise-lead">You're choosing a service outcome — not paying by the hour, and not worrying about what turns up on the invoice afterwards.</p>
+        <h2>One clear price. No hourly calculations.</h2>
+        <p class="pricing-promise-lead">Your package price is based on your home and selected service, so you know what you’re paying before we arrive.</p>
       </div>
       <ul class="promise-list">
         <li>
@@ -275,36 +297,37 @@
       <div class="section-head">
         <p class="eyebrow">Elite Laundry</p>
         <h2>Let us take laundry off your to-do list.</h2>
-        <p class="section-lead">Choose whether you'd like us to wash, dry and iron on-site, or collect your laundry and return it to your door. Standard turnaround is 24–48 hours.</p>
+        <p class="section-lead">Choose your load size and whether you’d like on-site service or collection and return. Your price and inclusions are shown before you book.</p>
       </div>
 
       <div class="laundry-panel">
         <div class="laundry-selector">
           <div class="field-group">
-            <span class="field-label">Service type</span>
+            <span class="field-label">1. Choose how we help</span>
             <div class="chip-row" id="laundryServiceChips">
-              <button class="chip is-active" data-service="wash">Wash, Dry &amp; Iron</button>
-              <button class="chip" data-service="collect">Collection, Wash, Dry &amp; Iron + Return</button>
+              <button class="chip is-active" data-service="wash">On-site service</button>
+              <button class="chip" data-service="collect">Collection &amp; return</button>
             </div>
           </div>
           <div class="field-group">
-            <span class="field-label">Load size</span>
-            <div class="chip-row" id="laundrySizeChips">
-              <button class="chip is-active" data-size="small">Small · up to 5kg</button>
-              <button class="chip" data-size="medium">Medium · up to 8kg</button>
-              <button class="chip" data-size="large">Large · up to 12kg</button>
+            <span class="field-label">2. Choose your load size</span>
+            <div class="laundry-load-list" id="laundrySizeChips">
+              <button class="laundry-load-option chip is-active" data-size="small"><span><strong>Small</strong><small>Maximum 5kg</small></span><b data-load-price="small">R280</b></button>
+              <button class="laundry-load-option chip" data-size="medium"><span><strong>Medium</strong><small>Maximum 8kg</small></span><b data-load-price="medium">R380</b></button>
+              <button class="laundry-load-option chip" data-size="large"><span><strong>Large</strong><small>Maximum 12kg</small></span><b data-load-price="large">R520</b></button>
             </div>
           </div>
-          <div class="laundry-included">
-            <span class="field-label">What's included</span>
-            <ul id="laundryIncludedList" class="mini-check-list"></ul>
+          <div class="laundry-included" aria-live="polite">
+            <span class="field-label">What your selected service includes</span>
+            <dl id="laundryIncludedList" class="laundry-facts"></dl>
           </div>
         </div>
         <div class="laundry-price-card">
-          <span class="lpc-label">Your price</span>
+          <span class="lpc-label">Your selected package price</span>
           <span class="lpc-price" id="laundryPrice">R280</span>
+          <span class="lpc-selection" id="laundrySelection">Small · maximum 5kg · on-site</span>
           <span class="lpc-turnaround">Standard turnaround: 24–48 hours</span>
-          <button class="btn btn-primary btn-block" id="laundryBookBtn" type="button">Book Laundry</button>
+          <button class="btn btn-primary btn-block" id="laundryBookBtn" type="button">Choose This Service</button>
         </div>
       </div>
     </div>
