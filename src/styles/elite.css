@@ -1067,3 +1067,47 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   background: #B99752;
   margin-top: 18px;
 }
+
+/* ===== REVIEWS ===== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(18px, 2.4vw, 30px);
+}
+.review-card {
+  margin: 0;
+  padding: clamp(22px, 2.6vw, 32px);
+  border: 1px solid rgba(17, 26, 38, 0.12);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.review-stars {
+  color: var(--gold, #B99752);
+  letter-spacing: 0.18em;
+  font-size: 0.95rem;
+}
+.review-card blockquote { margin: 0; }
+.review-card blockquote p {
+  margin: 0;
+  font-family: var(--font-display, Lora, serif);
+  font-size: clamp(1.02rem, 1.4vw, 1.16rem);
+  line-height: 1.65;
+}
+.review-card figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+  font-size: 0.86rem;
+}
+.review-card figcaption strong { font-weight: 700; }
+.review-card figcaption span { opacity: 0.65; }
+.reviews-note {
+  margin-top: clamp(18px, 2vw, 26px);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  opacity: 0.6;
+}
