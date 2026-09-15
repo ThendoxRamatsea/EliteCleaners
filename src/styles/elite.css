@@ -662,6 +662,8 @@ button { font-family: inherit; }
   text-decoration: none; transition: transform .18s ease, background-color .18s ease;
 }
 .whatsapp-float:hover { transform: translateY(-2px); background: var(--navy-800); }
+.whatsapp-float { transition: transform .18s ease, background-color .18s ease, opacity .25s ease; }
+.whatsapp-float.is-hidden { opacity: 0; pointer-events: none; transform: translateY(10px); }
 
 .mobile-sticky-cta {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 140; padding: 12px 16px;

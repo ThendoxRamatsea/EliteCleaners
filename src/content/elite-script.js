@@ -183,12 +183,18 @@ const FAQS = [
   /* ---------- header shadow on scroll + mobile sticky CTA ---------- */
   const header = document.getElementById("siteHeader");
   const stickyCta = document.getElementById("mobileStickyCta");
+  const whatsappFloat = document.getElementById("whatsappFloat");
   let lastY = window.scrollY;
-  window.addEventListener("scroll", function () {
+  const syncScrollChrome = function () {
     header.classList.toggle("is-scrolled", window.scrollY > 12);
     stickyCta.classList.toggle("is-visible", window.scrollY > 480);
+    if (whatsappFloat) whatsappFloat.classList.toggle("is-hidden", window.scrollY < 380);
+  };
+  window.addEventListener("scroll", function () {
+    syncScrollChrome();
     lastY = window.scrollY;
   }, { passive: true });
+  syncScrollChrome();
   const footer = document.getElementById("contact");
   if ("IntersectionObserver" in window && footer) {
     const footerObserver = new IntersectionObserver(function (entries) {
