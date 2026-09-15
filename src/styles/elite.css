@@ -729,7 +729,7 @@ h1, h2, h3, h4 { font-weight: 500; letter-spacing: 0; }
 .main-nav { gap: 28px; }
 .main-nav a { color: var(--ink-soft); font-size: .9rem; }
 
-.hero { min-height: calc(100svh - 88px); padding: 68px 0 88px; background: var(--paper); display: grid; align-items: center; }
+.hero { padding: 78px 0 96px; background: var(--paper); display: grid; align-items: center; }
 .hero-grid { grid-template-columns: minmax(0,.92fr) minmax(440px,.78fr); gap: clamp(56px,8vw,112px); }
 .hero-copy h1 { font-size: clamp(3.2rem,5.6vw,5.35rem); line-height: 1.03; max-width: 10ch; animation-duration: .9s; }
 .hero-copy h1 em { color: var(--gold-600); font-weight: 400; }
@@ -799,6 +799,7 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   .hero-visual { height: 560px; max-height: none; }
   .hv-panel-a { left: 0; width: 100%; border-radius: 8px 38px 8px 8px; }
   .hero-copy h1 { max-width: 12ch; }
+  .about-grid { grid-template-columns: 1fr; }
   .about-visual { height: 500px; }
 }
 
