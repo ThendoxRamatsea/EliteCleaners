@@ -797,7 +797,4 @@ const FAQS = [
     window.location.href = mailLink(m.subject, m.body);
   });
 
-  /* ---------- init ---------- */
-  const guaranteeSection = document.getElementById("eliteGuarantee");
-  if (ENABLE_ELITE_CLEAN_GUARANTEE && guaranteeSection) guaranteeSection.hidden = false;
 })();
