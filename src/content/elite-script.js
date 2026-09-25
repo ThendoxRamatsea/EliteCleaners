@@ -5,7 +5,7 @@
    Elite_Quick_Home_Cleaning_Duties.pdf
    ============================================================ */
 
-const WHATSAPP_NUMBER = "27766321161"; // 076 632 1161 in international format
+const WHATSAPP_NUMBER = "27769772924"; // 076 977 2924 in international format
 const EMAIL_ADDRESS = "info@elitecleaners.co.za";
 const PACKAGES = {
   standard: [
