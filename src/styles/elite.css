@@ -999,7 +999,7 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   .hero { min-height: 100svh; padding: 104px 0 56px; }
   .hero-bg-photo { object-position: center 20%; opacity: 0.46; }
   .hero-copy .eyebrow { letter-spacing: 0.2em; }
-  .eyebrow-locations { letter-spacing: 0.12em; font-size: 0.6rem; }
+  .eyebrow-locations { letter-spacing: 0.02em; font-size: 0.5rem; }
 }
 
 /* ---------- Section headings: editorial gold rule ---------- */
