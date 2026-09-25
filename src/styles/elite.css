@@ -211,7 +211,7 @@ button { font-family: inherit; }
 .hero-lead { font-size: 1.1rem; max-width: 46ch; animation: fadeUp .7s .08s ease both; }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin: 28px 0 44px; animation: fadeUp .7s .14s ease both; }
 
-.hero-trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; animation: fadeUp .7s .2s ease both; }
+.hero-trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; animation: fadeUp .7s .2s ease both; }
 .hero-trust-item { border-top: 2px solid var(--gold-500); padding-top: 12px; }
 .hero-trust-item strong { display: block; font-family: var(--font-display); font-size: 1.02rem; color: var(--navy-950); margin-bottom: 4px; }
 .hero-trust-item span { font-size: 0.86rem; color: var(--ink-soft); }
@@ -904,7 +904,6 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   .hv-card { left: 14px; right: 14px; bottom: 14px; }
   .hero-copy h1 { font-size: clamp(2.55rem,11.5vw,3.55rem); line-height: 1.04; }
   .hero-trust { grid-template-columns: 1fr 1fr; }
-  .hero-trust-item:last-child { grid-column: 1 / -1; }
   .service-grid { grid-template-columns: 1fr; }
   .service-card, .service-card:nth-child(even) { padding: 30px 0; border-left: 0; }
   .about-visual { height: 410px; }
@@ -928,7 +927,6 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   .brand-logo { height: 42px; }
   .hero-visual { height: 400px; }
   .hero-trust { grid-template-columns: 1fr; }
-  .hero-trust-item:last-child { grid-column: auto; }
   .hero-ctas .btn { width: 100%; }
   .team-grid { gap: 16px; }
   .comparison-row { gap: 10px 16px; padding-block: 16px; }

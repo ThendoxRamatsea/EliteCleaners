@@ -7,9 +7,6 @@
 
 const WHATSAPP_NUMBER = "27766321161"; // 076 632 1161 in international format
 const EMAIL_ADDRESS = "info@elitecleaners.co.za";
-// Proposed policy: change to true only after the business confirms the guarantee.
-const ENABLE_ELITE_CLEAN_GUARANTEE = false;
-
 const PACKAGES = {
   standard: [
     { id: "std-essential", name: "Elite Home Clean", beds: "1 bedroom", price: "R450", priceValue: 450, desc: "Complete home cleaning with one small laundry load and ironing." },
@@ -223,7 +220,7 @@ const FAQS = [
   /* ---------- calm section reveals ---------- */
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const revealTargets = document.querySelectorAll(
-    ".section-head, .service-choice-intro, .included-comparison, .pricing-grid, .promise-list, .care-gallery, .about-copy, .team-grid, .laundry-panel, .deep-clean-section, .standard-list, .how-steps, .faq-list"
+    ".section-head, .service-choice-intro, .included-comparison, .pricing-grid, .promise-list, .care-gallery, .about-copy, .team-grid, .laundry-panel, .how-steps, .faq-list"
   );
 
   revealTargets.forEach(function (target, index) {
@@ -391,15 +388,16 @@ const FAQS = [
     const sizeLabel = LAUNDRY_LABELS.size[laundrySize].replace("up to", "maximum");
     laundrySelection.textContent = sizeLabel + " · on-site";
     const facts = [
-      ["Washing", "Included"],
-      ["Drying", "Included"],
-      ["Ironing", "Included"],
-      ["Folding", "Included"],
-      ["Hanging", "Included"],
+      ["Washing", "✓"],
+      ["Drying", "✓"],
+      ["Ironing", "✓"],
+      ["Folding", "✓"],
+      ["Hanging", "✓"],
       ["Service location", "On-site in your home"]
     ];
     laundryIncludedList.innerHTML = facts.map(function (fact) {
-      return "<div><dt>" + fact[0] + "</dt><dd>" + fact[1] + "</dd></div>";
+      const includedLabel = fact[1] === "✓" ? ' aria-label="Included"' : "";
+      return "<div><dt>" + fact[0] + "</dt><dd" + includedLabel + ">" + fact[1] + "</dd></div>";
     }).join("");
   }
   if (laundryServiceChips) {
