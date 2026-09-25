@@ -976,7 +976,7 @@ main > section.scroll-reveal.is-revealed { transform: none; }
   display: block; margin-top: 10px; color: #fff;
   white-space: nowrap; letter-spacing: 0.24em; font-size: 0.68rem;
 }
-.hero-copy h1 { color: var(--cream); max-width: 12ch; }
+.hero-copy h1 { color: var(--cream); max-width: 14ch; font-family: var(--font-body); font-weight: 600; letter-spacing: 0.01em; }
 .hero-copy h1 em { color: var(--gold-400); font-style: italic; }
 .hero-lead { color: rgba(241,238,232,0.82); }
 .hero-lead strong { color: var(--cream); }
