@@ -147,7 +147,6 @@ const FAQS = [
   }
   function isWithinOperatingHours() {
     const now = new Date();
-    const day = now.getDay(); // 0 Sun .. 6 Sat
     const mins = now.getHours() * 60 + now.getMinutes();
     if (mins >= 8 * 60 && mins <= 17 * 60 + 30) return true;
   }
