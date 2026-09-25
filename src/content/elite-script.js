@@ -125,8 +125,8 @@ const FAQS = [
   { q: "How does Elite Laundry work?", a: "Elite Laundry is an on-site service. We wash, dry, iron, fold and hang your laundry in your home." },
   { q: "How long does laundry take?", a: "Standard turnaround for Elite Laundry is 24 to 48 hours." },
   { q: "What areas do you service?", a: "We're based in Johannesburg. Send us your suburb when booking and we'll confirm whether we service your area." },
-  { q: "Can I book on Saturdays?", a: "Yes. We operate on Saturdays from 08:00 to 14:00." },
-  { q: "Do you operate on Sundays?", a: "We're closed on Sundays. Enquiries sent over the weekend will be attended to during our next operating hours." },
+  { q: "What are your operating hours?", a: "We're open every day from 08:00 to 17:30, including weekends." },
+  { q: "Can I book outside of these hours?", a: "Yes. Enquiries sent outside operating hours will be attended to as soon as we reopen." },
   { q: "How do I make a booking?", a: "Use the Book Your Clean button. Select your service and package, add your details, review your summary, and send your request via WhatsApp or email." },
   { q: "When is my booking confirmed?", a: "Submitting the booking form sends a booking request. Your booking is confirmed once Elite Cleaners has confirmed availability with you directly." },
   { q: "Can I request the same cleaner again?", a: "We'll always try to accommodate this where possible — let us know in your booking notes and we'll do our best." },
@@ -147,11 +147,8 @@ const FAQS = [
   }
   function isWithinOperatingHours() {
     const now = new Date();
-    const day = now.getDay(); // 0 Sun .. 6 Sat
     const mins = now.getHours() * 60 + now.getMinutes();
-    if (day >= 1 && day <= 5) return mins >= 7 * 60 + 30 && mins <= 17 * 60;
-    if (day === 6) return mins >= 8 * 60 && mins <= 14 * 60;
-    return false;
+    if (mins >= 8 * 60 && mins <= 17 * 60 + 30) return true;
   }
 
   /* ---------- generic WhatsApp / footer links ---------- */
